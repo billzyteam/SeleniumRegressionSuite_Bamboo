@@ -18,7 +18,7 @@ namespace Templates
 {
     class IssueInvoiceTemplates : Tests 
     {
-        [Test]
+       /* [Test]
         public void ExpernalpayerIssueInvoice01_GST_NoSurcharge()
         {
       
@@ -1004,7 +1004,7 @@ namespace Templates
 
         }
 
-
+    */
     }
 
   
