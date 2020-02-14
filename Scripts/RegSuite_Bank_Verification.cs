@@ -17,7 +17,7 @@ namespace BillzyAutomationTestSuite.Scripts
 {
     [TestFixture]
     [Parallelizable]
-    //Test validation
+    //Test validation to githu
     class RegSuite_Bank_Verification : Tests
     {
         [Test]
