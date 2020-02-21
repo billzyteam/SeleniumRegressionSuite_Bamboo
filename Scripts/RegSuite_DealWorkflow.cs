@@ -2090,7 +2090,7 @@ namespace BillzyAutomationTestSuite.Scripts
             }
         }
 
-        [Test]
+       /* [Test]
         public void BillzyDeal08_DealWorkFlow_IconLogic()
         {
             HomePage HomePg = new HomePage(WebDriver);
@@ -2883,7 +2883,9 @@ namespace BillzyAutomationTestSuite.Scripts
             {
               
             }
+            
         }
+        */
 
 
 
