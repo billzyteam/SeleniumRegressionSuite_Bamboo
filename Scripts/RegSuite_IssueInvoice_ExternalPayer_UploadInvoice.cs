@@ -87,11 +87,11 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay5);
                 SendPg.SearchInvoiceSent().SendKeys("Ext-Inv@" + randnumber1);
                 SeleniumSetMethods.WaitOnPage(secdelay10);
-                 SeleniumSetMethods.WaitOnPage(50);
+                 
                 IWebElement bodyTag4 = WebDriver.FindElement(By.TagName("body"));
                 SeleniumSetMethods.WaitOnPage(secdelay3);
                 Console.WriteLine(bodyTag4.Text);
-                SendPg.InvoiceSelection().Click();
+                SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay3);
 
             }

@@ -249,7 +249,7 @@ namespace BillzyAutomationTestSuite.PageObjects
         }
         public IWebElement BillzyRefResult()
         {
-            return webDriver.FindElement(By.XPath("//*[@class=\"sent-data\"]//div[contains(@class,'row table-row combined-row')] //div[contains(@class,'invoice-number')][1]"));
+            return webDriver.FindElement(By.XPath("//*[@class=\"sent-data\"]//div[contains(@class,'row table-row combined-row')] //div[contains(@class,'col-lg-2 visible-lg view-details-lnk invoice-number')]"));
         }
 
         public IWebElement NotViewed()
