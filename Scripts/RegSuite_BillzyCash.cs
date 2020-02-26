@@ -434,14 +434,15 @@ namespace BillzyAutomationTestSuite.Scripts
             SeleniumSetMethods.WaitOnPage(secdelay2);
             SIVPG1.ReturnBTN().Click();
             SeleniumSetMethods.WaitOnPage(secdelay2);
-            
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+
+            }
+            finally
+            {
+                
             }
         }
         [Test]
@@ -699,14 +700,15 @@ namespace BillzyAutomationTestSuite.Scripts
             Assert.IsTrue(PaidStatus.Contains("PAID"));
             SIVPG1.ReturnBTN().Click();
             SeleniumSetMethods.WaitOnPage(secdelay2);
-            //HomePg.SignOutBTN().Click();
-            }
-            finally
-            {
+                //HomePg.SignOutBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+            }
+            finally
+            {
+                
             }
         }
 
@@ -843,13 +845,14 @@ namespace BillzyAutomationTestSuite.Scripts
             bool pdfinvoice1 = Recpg.PDFInvoice().Displayed;
             Assert.IsTrue(pdfinvoice1 == true);
             SeleniumSetMethods.WaitOnPage(secdelay2);
+                WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
+                SeleniumSetMethods.WaitOnPage(secdelay4);
+                HomePg.SignOutBTN().Click();
 
             }
             finally
             {
-                WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
-                SeleniumSetMethods.WaitOnPage(secdelay4);
-                HomePg.SignOutBTN().Click();
+                
             }
         }
 
@@ -970,14 +973,15 @@ namespace BillzyAutomationTestSuite.Scripts
             SeleniumSetMethods.WaitOnPage(secdelay2);
             Assert.IsTrue(verifyinvoice == false && Pay == true && PostInvoice == true && PDFInvoice1 == true && deleteoption == true && dealoption2 == true);
             HomePg.ReceivedBTN().Click();
-          // HomePg.SignOutBTN().Click();
-            }
-            finally
-            {
+                // HomePg.SignOutBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+            }
+            finally
+            {
+                
             }
         }
 
@@ -1066,14 +1070,15 @@ namespace BillzyAutomationTestSuite.Scripts
             bool billzycolumnIcon = SendPg.BillzyColumnCashIcon().Displayed;
             SeleniumSetMethods.WaitOnPage(secdelay2);
             Assert.IsTrue(billzycolumnstatus.Contains("Cash requested") && billzycolumnIcon == true);
-           //HomePg.SignOutBTN().Click();
-            }
-            finally
-            {
+                //HomePg.SignOutBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+            }
+            finally
+            {
+               
             }
         }
 
@@ -1160,13 +1165,14 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Assert.IsTrue(billzycolumnstatus.Contains("Cash requested") && billzycolumnIcon == true);
                 //HomePg.SignOutBTN().Click();
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+            }
+            finally
+            {
+                
             }
         }
 
@@ -1228,15 +1234,15 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(verfiymessage == false && billserofferdiscountbutton == false && cashpanel == true && cashbutton == false && cashstatus.Contains("APPROVED"));
                 SIVPG1.ReturnBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
-                //HomePg.SignOutBTN().Click();
-
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+
+            }
+            finally
+            {
+                
             }
 
         }
@@ -1300,15 +1306,15 @@ namespace BillzyAutomationTestSuite.Scripts
             Assert.IsTrue(verfiymessage == false && billserofferdiscountbutton == false && cashpanel == true && cashbutton == false && cashstatus.Contains("DECLINED"));
             SIVPG1.ReturnBTN().Click();
             SeleniumSetMethods.WaitOnPage(secdelay2);
-               // HomePg.SignOutBTN().Click();
-
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+
+            }
+            finally
+            {
+                
             }
 
 
@@ -1422,7 +1428,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(cashapprove1.Contains("Pending Approval") && approvebtn1 == true);
                 SeleniumSetMethods.WaitOnPage(secdelay5);
 
-                HomePg.Uploadfactorfox().SendKeys(@"C:\Users\BillzyAdmin\OneDrive - Billzy\BillzyTestSuite\BillzyAutomationTestSuite\bin\Debug\netcoreapp3.0\FactorFox.csv");
+                HomePg.Uploadfactorfox().SendKeys(@"C:\Users\Selenium\Desktop\SeleniumRegressionSuite_Bamboo\bin\Debug\netcoreapp3.1\FactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(secdelay7);
                 IAlert alert = WebDriver.SwitchTo().Alert();
                 alert.Accept();
@@ -1556,8 +1562,7 @@ namespace BillzyAutomationTestSuite.Scripts
             }
             finally
             {
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                WebDriver.Navigate().GoToUrl("https://demo.billzy.com");
+               
 
             }
 
@@ -1797,8 +1802,7 @@ namespace BillzyAutomationTestSuite.Scripts
             }
             finally
             {
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                WebDriver.Navigate().GoToUrl("https://demo.billzy.com");
+               
 
             }
 
@@ -2211,8 +2215,7 @@ namespace BillzyAutomationTestSuite.Scripts
             }
             finally
             {
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                WebDriver.Navigate().GoToUrl("https://demo.billzy.com");
+               
 
             }
 
@@ -2401,7 +2404,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(cashapprove1.Contains("Pending Approval") && approvebtn1 == true);
                 SeleniumSetMethods.WaitOnPage(secdelay5);
 
-                HomePg.Uploadfactorfox().SendKeys(@"C:\Users\BillzyAdmin\OneDrive - Billzy\BillzyTestSuite\BillzyAutomationTestSuite\bin\Debug\netcoreapp3.0\FactorFox.csv");
+                HomePg.Uploadfactorfox().SendKeys(@"C:\Users\Selenium\Desktop\SeleniumRegressionSuite_Bamboo\bin\Debug\netcoreapp3.1\FactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(secdelay7);
                 IAlert alert = WebDriver.SwitchTo().Alert();
                 alert.Accept();
@@ -2655,8 +2658,7 @@ namespace BillzyAutomationTestSuite.Scripts
             finally
             {
                
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                WebDriver.Navigate().GoToUrl("https://demo.billzy.com");
+               
 
             }
 
@@ -2846,7 +2848,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(cashapprove1.Contains("Pending Approval") && approvebtn1 == true);
                 SeleniumSetMethods.WaitOnPage(secdelay5);
 
-                HomePg.Uploadfactorfox().SendKeys(@"C:\Users\BillzyAdmin\OneDrive - Billzy\BillzyTestSuite\BillzyAutomationTestSuite\bin\Debug\netcoreapp3.0\FactorFox.csv");
+                HomePg.Uploadfactorfox().SendKeys(@"C:\Users\Selenium\Desktop\SeleniumRegressionSuite_Bamboo\bin\Debug\netcoreapp3.1\FactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(secdelay7);
                 IAlert alert = WebDriver.SwitchTo().Alert();
                 alert.Accept();
@@ -3113,8 +3115,7 @@ namespace BillzyAutomationTestSuite.Scripts
             }
             finally
             {
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                WebDriver.Navigate().GoToUrl("https://demo.billzy.com");
+               
 
             }
 

@@ -94,7 +94,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.PdfUploadFileBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
-                IssueInvoicePg.uploadPDF().SendKeys(@"C:\Users\BillzyAdmin\Documents\Visual Studio 2019\Projects\BillzyAutomationTestSuite\Invoice.pdf");
+                IssueInvoicePg.uploadPDF().SendKeys(@"C:\Users\Selenium\Desktop\SeleniumRegressionSuite_Bamboo\bin\Debug\netcoreapp3.1\Invoice.pdf");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 IssueInvoicePg.UploadAmount().SendKeys("900.90");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
@@ -163,7 +163,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Bobopg.RequestCash().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
-                Bobopg.PdfUpload().SendKeys(@"C:\Users\BillzyAdmin\OneDrive - Billzy\BillzyTestSuite\BillzyAutomationTestSuite\Invoice.pdf");
+                Bobopg.PdfUpload().SendKeys(@"C:\Users\Selenium\Desktop\SeleniumRegressionSuite_Bamboo\bin\Debug\netcoreapp3.1\Invoice.pdf");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Bobopg.Issue().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay10);
@@ -190,7 +190,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 Bobopg.InvoiceIssueDateTPB().SendKeys(Issuedate);
                 Bobopg.TotalAmountTPB().SendKeys("150.66");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
-                Bobopg.PdfUploadTPB().SendKeys(@"C:\Users\BillzyAdmin\OneDrive - Billzy\BillzyTestSuite\BillzyAutomationTestSuite\Invoice.pdf");
+                Bobopg.PdfUploadTPB().SendKeys(@"C:\Users\Selenium\Desktop\SeleniumRegressionSuite_Bamboo\bin\Debug\netcoreapp3.1\Invoice.pdf");
                 SeleniumSetMethods.WaitOnPage(secdelay5);
                 Bobopg.IssueTPB().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay10);
@@ -407,7 +407,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.PdfUploadFileBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
-                IssueInvoicePg.uploadPDF().SendKeys(@"C:\Users\BillzyAdmin\Documents\Visual Studio 2019\Projects\BillzyAutomationTestSuite\Invoice.pdf");
+                IssueInvoicePg.uploadPDF().SendKeys(@"C:\Users\Selenium\Desktop\SeleniumRegressionSuite_Bamboo\bin\Debug\netcoreapp3.1\Invoice.pdf");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 IssueInvoicePg.UploadAmount().SendKeys("900.90");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
@@ -474,7 +474,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Bobopg.RequestCash().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
-                Bobopg.PdfUpload().SendKeys(@"C:\Users\BillzyAdmin\OneDrive - Billzy\BillzyTestSuite\BillzyAutomationTestSuite\Invoice.pdf");
+                Bobopg.PdfUpload().SendKeys(@"C:\Users\Selenium\Desktop\SeleniumRegressionSuite_Bamboo\bin\Debug\netcoreapp3.1\Invoice.pdf");
                 SeleniumSetMethods.WaitOnPage(secdelay3);
                 Bobopg.Reference().SendKeys("INVEXTMTBOBO@" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(secdelay7);
@@ -789,7 +789,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.PdfUploadFileBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
-                IssueInvoicePg.uploadPDF().SendKeys(@"C:\Users\BillzyAdmin\Documents\Visual Studio 2019\Projects\BillzyAutomationTestSuite\Invoice.pdf");
+                IssueInvoicePg.uploadPDF().SendKeys(@"C:\Users\Selenium\Desktop\SeleniumRegressionSuite_Bamboo\bin\Debug\netcoreapp3.1\Invoice.pdf");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 IssueInvoicePg.UploadAmount().SendKeys("900.90");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
@@ -3268,7 +3268,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(cashapprove1.Contains("Pending Approval") && approvebtn1 == true);
                 SeleniumSetMethods.WaitOnPage(secdelay5);
 
-                HomePg.Uploadfactorfox().SendKeys(@"C:\Users\BillzyAdmin\OneDrive - Billzy\BillzyTestSuite\BillzyAutomationTestSuite\bin\Debug\netcoreapp3.0\FactorFox.csv");
+                HomePg.Uploadfactorfox().SendKeys(@"C:\Users\Selenium\Desktop\SeleniumRegressionSuite_Bamboo\bin\Debug\netcoreapp3.1\FactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(secdelay10);
                 IAlert alert = WebDriver.SwitchTo().Alert();
                 alert.Accept();

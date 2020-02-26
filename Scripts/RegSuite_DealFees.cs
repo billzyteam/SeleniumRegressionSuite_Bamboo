@@ -218,13 +218,14 @@ namespace BillzyAutomationTestSuite.Scripts
                 string paidstatushover = Recpg.HistoryPaidStatus().GetAttribute("data-title");
                 SeleniumSetMethods.WaitOnPage(secdelay3);
                 Assert.IsTrue(paidstatushover.Contains("paid"));
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+            }
+            finally
+            {
+                
             }
         }
 
@@ -461,13 +462,14 @@ namespace BillzyAutomationTestSuite.Scripts
                 string paidstatushover = Recpg.HistoryPaidStatus().GetAttribute("data-title");
                 SeleniumSetMethods.WaitOnPage(secdelay3);
                 Assert.IsTrue(paidstatushover.Contains("paid"));
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+            }
+            finally
+            {
+                
             }
         }
         [Test]

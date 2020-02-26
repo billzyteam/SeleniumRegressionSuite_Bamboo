@@ -174,13 +174,14 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Assert.IsTrue(billerofferbtn == false && PayerOfferEarlyPaymentBTN == false && PayBTNNoDeal == true && PayerVerifyBTN == true);
                 SeleniumSetMethods.WaitOnPage(secdelay2);
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+            }
+            finally
+            {
+               
             }
         }
     }

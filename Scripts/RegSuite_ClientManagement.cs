@@ -171,12 +171,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 WebDriver.PageSource.Contains("So does using the billzy cashflow management tools such as paying by card, billzy Deal and billzy Cash.");
                 WebDriver.PageSource.Contains("Paying late or raising invoices that do not get paid will lower it.");
                 SeleniumSetMethods.WaitOnPage(secdelay3);
-            }
-            finally
-            {
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 HomePg.SignOutBTN().Click();
+            }
+            finally
+            {
+                
             }
 
         }
@@ -322,16 +323,16 @@ namespace BillzyAutomationTestSuite.Scripts
                 loginPage.PasswordTextBox().SendKeys("Cognito1");
                 loginPage.LoginButton().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay7);
-
-                
-
-                
-            }
-            finally
-            {
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+
+
+
+            }
+            finally
+            {
+               
             }
 
         }

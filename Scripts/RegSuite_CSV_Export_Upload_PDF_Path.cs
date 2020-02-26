@@ -243,15 +243,15 @@ namespace BillzyAutomationTestSuite.Scripts
                 string csvfilename5 = CSVLink5.Substring(0, CSVLink5.LastIndexOf(".") + 1);
                 string XERO2 = File.ReadAllText(@"C:\Users\BillzyAdmin\Downloads\" + csvfilename5 + "csv");
                 Assert.IsTrue(XERO2.Contains("ContactName,EmailAddress,POAddressLine1,POCity,POPostalCode,POCountry,InvoiceNumber,Reference,InvoiceDate,DueDate,Description,Quantity,UnitAmount,AccountCode,TaxType,TaxAmount\nbillzyBiz-380887,madcowbiller+UploadPDF_Invoice_02@gmail.com,Testing St.,Brisbane,4000,AU,INV10214716,Upload_PDF-01,17/10/2018,01/01/2024,Exported from pay.billzy.com,1,100.00,,GST,0.00\nbillzyBiz-380887,madcowbiller+UploadPDF_Invoice_02@gmail.com,Testing St.,Brisbane,4000,AU,INV10214724,Upload_PDF-02,17/10/2018,01/01/2024,Exported from pay.billzy.com,1,200.00,,GST,0.00\nbillzyBiz-380887,madcowbiller+UploadPDF_Invoice_02@gmail.com,Testing St.,Brisbane,4000,AU,INV10214732,Upload_PDF-03,17/10/2018,01/01/2024,Exported from pay.billzy.com,1,300.00,,GST,0.00"));
-
-                
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+
+            }
+            finally
+            {
+               
             }
 
 
@@ -478,13 +478,14 @@ namespace BillzyAutomationTestSuite.Scripts
                 string csvfilename5 = CSVLink5.Substring(0, CSVLink5.LastIndexOf(".") + 1);
                 string XERO2 = File.ReadAllText(@"C:\Users\BillzyAdmin\Downloads\" + csvfilename5 + "csv");
                 Assert.IsTrue(XERO2.Contains("ContactName,EmailAddress,POAddressLine1,POCity,POPostalCode,POCountry,InvoiceNumber,Reference,InvoiceDate,DueDate,Description,Quantity,UnitAmount,AccountCode,TaxType,TaxAmount\nbillzyBiz-380887,madcowbiller+UploadPDF_Invoice_02@gmail.com,Testing St.,Brisbane,4000,AU,INV10214765,Upload_PDF_P-06,18/10/2018,01/01/2024,Exported from pay.billzy.com,1,600.00,,GST,0.00\nbillzyBiz-380887,madcowbiller+UploadPDF_Invoice_02@gmail.com,Testing St.,Brisbane,4000,AU,INV10214773,Upload_PDF_P-07,18/10/2018,01/01/2024,Exported from pay.billzy.com,1,700.00,,GST,0.00\nbillzyBiz-380887,madcowbiller+UploadPDF_Invoice_02@gmail.com,Testing St.,Brisbane,4000,AU,INV10214781,Upload_PDF_P-08,18/10/2018,01/01/2024,Exported from pay.billzy.com,1,800.00,,GST,0.00"));
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+            }
+            finally
+            {
+                
             }
 
 

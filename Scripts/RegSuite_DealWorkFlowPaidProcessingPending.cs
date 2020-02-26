@@ -217,15 +217,16 @@ namespace BillzyAutomationTestSuite.Scripts
                 string amount3 = SIVPG1.InvoiceDetailsPayPanel().Text;
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Assert.IsTrue(dealmsg.Contains("You were paid 90 days earlier") && amount3.Contains("305.01"));
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
+                SeleniumSetMethods.WaitOnPage(secdelay4);
+                HomePg.SignOutBTN().Click();
 
 
             }
             finally
             {
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
-                SeleniumSetMethods.WaitOnPage(secdelay4);
-                HomePg.SignOutBTN().Click();
+               
             }
         }
 
@@ -426,13 +427,14 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay2);
               string dealmsg = SendPg.SIVProcessingStatus().Text;
                Assert.IsTrue(dealmsg.Contains("PROCESSING"));
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+            }
+            finally
+            {
+               
             }
         }
 
@@ -757,13 +759,14 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 string dealmsg = SIVPG1.InvoiceStatus().Text;
                 Assert.IsTrue(dealmsg.Contains("PAID"));
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+            }
+            finally
+            {
+               
             }
         }
 
@@ -905,13 +908,14 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 string dealmsg = SendPg.SIVProcessingStatus().Text;
                 Assert.IsTrue(dealmsg.Contains("PROCESSING"));
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+            }
+            finally
+            {
+                
             }
         }
         /*[Test]

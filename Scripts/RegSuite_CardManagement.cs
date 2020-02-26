@@ -197,14 +197,15 @@ namespace BillzyAutomationTestSuite.Scripts
                 Console.WriteLine("title" + title);
                 string data = CardPg.BankAccountData().Text;
                 Console.WriteLine("data" + data);
-               
+                WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                HomePg.SignOutBTN().Click();
+
 
             }
             finally
             {
-                WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                HomePg.SignOutBTN().Click();
+                
             }
 
         }

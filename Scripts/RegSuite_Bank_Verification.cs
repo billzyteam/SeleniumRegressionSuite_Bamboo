@@ -188,15 +188,16 @@ namespace BillzyAutomationTestSuite.Scripts
                 DebitCardPg.DebitCardBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 VerifyBankAccountPg.DeleteAccountButton().Click();
-               
-
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+
+
+            }
+            finally
+            {
+               
             }
 
 
@@ -244,14 +245,15 @@ namespace BillzyAutomationTestSuite.Scripts
                 bool banklist = bodyTag.Text.Contains("invalid");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Assert.IsTrue(banklist == false);
-                
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+
+            }
+            finally
+            {
+               
             }
 
 
@@ -520,15 +522,16 @@ namespace BillzyAutomationTestSuite.Scripts
                     bool ContactBillzyBTN = MerchantPg.ContactBillzyBTN().Displayed;
                     SeleniumSetMethods.WaitOnPage(secdelay3);
                     Assert.IsTrue(ContactBillzyBTN == true);
+                    SeleniumSetMethods.WaitOnPage(secdelay2);
+                    WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
+                    SeleniumSetMethods.WaitOnPage(secdelay4);
 
                 }
 
             }
             finally
             {
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
-                SeleniumSetMethods.WaitOnPage(secdelay4);
+               
                 
             }
 
