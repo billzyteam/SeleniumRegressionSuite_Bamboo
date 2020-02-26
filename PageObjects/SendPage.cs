@@ -242,6 +242,11 @@ namespace BillzyAutomationTestSuite.PageObjects
         {
             return webDriver.FindElement(By.XPath("(//button[@id= 'accept-deal-btn'] )[2]"));
         }
+
+        public IWebElement InvoiceSelection()
+        {
+            return webDriver.FindElement(By.XPath("//*[@class=\"sent-data\"]//div[contains(@class,'row table-row combined-row')] //div[contains(@class,'invoice-number')][1]"));
+        }
         public IWebElement BillzyRefResult()
         {
             return webDriver.FindElement(By.XPath("//*[@class=\"sent-data\"]//div[contains(@class,'row table-row combined-row')] //div[contains(@class,'invoice-number')][1]"));
