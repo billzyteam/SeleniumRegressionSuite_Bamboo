@@ -103,7 +103,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 HomePg.SignOutBTN().Click();
             }
         }
-        /*
+        
 
         [Test]
         public void IssueInvoice02_ExternalPayer_UploadInvoice_GST_Surcharge()
@@ -357,7 +357,7 @@ namespace BillzyAutomationTestSuite.Scripts
             }
         }
 
-*/       
+       
 
     }
 }
