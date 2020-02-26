@@ -245,7 +245,7 @@ namespace BillzyAutomationTestSuite.PageObjects
 
         public IWebElement InvoiceSelection()
         {
-            return webDriver.FindElement(By.XPath("//*[@class=\"sent-data\"]//div[contains(@class,'row table-row combined-row')] //div[contains(@class,'invoice-number')][1]"));
+            return webDriver.FindElement(By.XPath("//*[@class=\"sent-data\"]//div[contains(@class,'row table-row combined-row')] //div[contains(@class,'invoice-number')][2]"));
         }
         public IWebElement BillzyRefResult()
         {
