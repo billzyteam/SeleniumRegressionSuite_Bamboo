@@ -30,21 +30,21 @@ namespace BillzyAutomationTestSuite.Scripts
 
             try
             {
-                string awsid = "";
-                string awsuname = "";
-                string bamboouname = "";
-                string ilinkuname = "";
-                string awspassword = "";
-                string bamboopassword = "";
-                string ilinkpassword = "";
-                
+                string awsid = "564633686392";
+                string awsuname = "nelda.raju";
+                string bamboouname = "nraju@billzy.com";
+                string ilinkuname = "nraju";
+                string awspassword = "nonprod2019!";
+                string bamboopassword = "bamboo2019!";
+                string ilinkpassword = "ilink2020!";
+
 
                 string connstring10 = "SERVER=ua1499yt8dheg18.coyhkhf2vwwc.ap-southeast-2.rds.amazonaws.com;DATABASE=billzy;USERNAME=AutoTest;PASSWORD=MEtZA9e1SJvMm0d4ukLk;";
                 MySqlConnection conn = new MySqlConnection(connstring10);
                 MySqlCommand command = conn.CreateCommand();
                 string folderdate = DateTime.Now.ToString("ddMMyyyHHmmss");
                 var chromeOptions = new ChromeOptions();
-                var downloadDirectory = @"C:\Users\BillzyAdmin\OneDrive-Billzy\BillzyTestSuite\BillzyAutomationTestSuite\bin\Debug\netcoreapp3.0\Files" + folderdate;
+                var downloadDirectory = @"C:\Users\Selenium\Desktop\SeleniumRegressionSuite_Bamboo\bin\Debug\netcoreapp3.1\Files" + folderdate;
                 chromeOptions.AddUserProfilePreference("download.default_directory", downloadDirectory);
                 chromeOptions.AddUserProfilePreference("download.prompt_for_download", false);
                 chromeOptions.AddUserProfilePreference("disable-popup-blocking", "true");
@@ -159,7 +159,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("001INTSURCASHREQCC@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("001INTSURCASHREQCC@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -172,13 +172,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("001INTSURCASHREQCC@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("001INTSURCASHREQCC@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(5);
                 string invnumber1 = SIVPG1.InvNumber().Text;
                 string invoicenumber1 = invnumber1.Substring(invnumber1.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber1, "001INTSURCASHREQCC@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber1, "001INTSURCASHREQCC@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 InvList("randnumbervalue", randnumbervalue, "stringlist.txt");
                 InvList("invoicenumber1", invoicenumber1, "stringlist.txt");
                 SeleniumSetMethods.WaitOnPage(2);
@@ -194,7 +194,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("002INTNOSURCASHREQDD@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("002INTNOSURCASHREQDD@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -207,13 +207,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("002INTNOSURCASHREQDD@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("002INTNOSURCASHREQDD@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(5);
                 string invnumber2 = SIVPG1.InvNumber().Text;
                 string invoicenumber2 = invnumber2.Substring(invnumber2.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber2, "002INTNOSURCASHREQDD@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber2, "002INTNOSURCASHREQDD@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 InvList("invoicenumber2", invoicenumber2, "stringlist.txt");
                 //Internal Cash    Yes Approved    CC  03INTSURCASHAPPCC@
@@ -227,7 +227,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("003INTSURCASHAPPCC@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("003INTSURCASHAPPCC@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -240,13 +240,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("003INTSURCASHAPPCC@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("003INTSURCASHAPPCC@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(5);
                 string invnumber3 = SIVPG1.InvNumber().Text;
                 string invoicenumber3 = invnumber3.Substring(invnumber3.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber3, "003INTSURCASHAPPCC@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber3, "003INTSURCASHAPPCC@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 addrecord(invoicenumber3, "approved", "FDRFactorFox.csv");
                 InvList("invoicenumber3", invoicenumber3, "stringlist.txt");
@@ -263,7 +263,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("004INTNOSURCASHAPPDD@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("004INTNOSURCASHAPPDD@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -276,13 +276,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("004INTNOSURCASHAPPDD@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("004INTNOSURCASHAPPDD@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(5);
                 string invnumber4 = SIVPG1.InvNumber().Text;
                 string invoicenumber4 = invnumber4.Substring(invnumber4.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber4, "004INTNOSURCASHAPPDD@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber4, "004INTNOSURCASHAPPDD@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 addrecord(invoicenumber4, "approved", "FDRFactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(1);
@@ -298,7 +298,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("005INTSURCASHBATCC@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("005INTSURCASHBATCC@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -311,13 +311,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("005INTSURCASHBATCC@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("005INTSURCASHBATCC@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(5);
                 string invnumber5 = SIVPG1.InvNumber().Text;
                 string invoicenumber5 = invnumber5.Substring(invnumber5.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber5, "005INTSURCASHBATCC@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber5, "005INTSURCASHBATCC@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 addrecord(invoicenumber5, "approved", "FDRFactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(1);
@@ -333,7 +333,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("006INTNOSURCASHBATDD@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("006INTNOSURCASHBATDD@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -346,13 +346,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("006INTNOSURCASHBATDD@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("006INTNOSURCASHBATDD@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(5);
                 string invnumber6 = SIVPG1.InvNumber().Text;
                 string invoicenumber6 = invnumber6.Substring(invnumber6.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber6, "006INTNOSURCASHBATDD@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber6, "006INTNOSURCASHBATDD@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 addrecord(invoicenumber6, "approved", "FDRFactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(1);
@@ -367,7 +367,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("007INTSURCASHFUNCC@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("007INTSURCASHFUNCC@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -380,13 +380,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("007INTSURCASHFUNCC@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("007INTSURCASHFUNCC@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(5);
                 string invnumber7 = SIVPG1.InvNumber().Text;
                 string invoicenumber7 = invnumber7.Substring(invnumber7.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber7, "007INTSURCASHFUNCC@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber7, "007INTSURCASHFUNCC@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 addrecord(invoicenumber7, "approved", "FDRFactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(1);
@@ -402,7 +402,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("008INTNOSURCASHFUNDD@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("008INTNOSURCASHFUNDD@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -415,13 +415,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("008INTNOSURCASHFUNDD@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("008INTNOSURCASHFUNDD@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(5);
                 string invnumber8 = SIVPG1.InvNumber().Text;
                 string invoicenumber8 = invnumber8.Substring(invnumber8.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber8, "008INTNOSURCASHFUNDD@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber8, "008INTNOSURCASHFUNDD@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 addrecord(invoicenumber8, "approved", "FDRFactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(1);
@@ -437,7 +437,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("009INTSURCASHDECCC@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("009INTSURCASHDECCC@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -450,13 +450,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("009INTSURCASHDECCC@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("009INTSURCASHDECCC@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(5);
                 string invnumber9 = SIVPG1.InvNumber().Text;
                 string invoicenumber9 = invnumber9.Substring(invnumber9.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber9, "009INTSURCASHDECCC@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber9, "009INTSURCASHDECCC@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 InvList("invoicenumber9", invoicenumber9, "stringlist.txt");
                 //Internal Cash    No Declined    Bank    10INTNOSURCASHDECDD@
@@ -470,7 +470,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("010INTNOSURCASHDECDD@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("010INTNOSURCASHDECDD@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -483,13 +483,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("010INTNOSURCASHDECDD@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("010INTNOSURCASHDECDD@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(5);
                 string invnumber10 = SIVPG1.InvNumber().Text;
                 string invoicenumber10 = invnumber10.Substring(invnumber10.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber10, "010INTNOSURCASHDECDD@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber10, "010INTNOSURCASHDECDD@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 InvList("invoicenumber10", invoicenumber10, "stringlist.txt");
                 //Internal Cash    No FFApproved  CC  11INTSURCASHFFACC@
@@ -503,7 +503,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("011INTSURCASHFFACC@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("011INTSURCASHFFACC@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -516,13 +516,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("011INTSURCASHFFACC@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("011INTSURCASHFFACC@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(5);
                 string invnumber11 = SIVPG1.InvNumber().Text;
                 string invoicenumber11 = invnumber11.Substring(invnumber11.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber11, "011INTSURCASHFFACC@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber11, "011INTSURCASHFFACC@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 addrecord(invoicenumber11, "approved", "FDRFactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(1);
@@ -538,7 +538,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("012INTNOSURCASHPVERDD@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("012INTNOSURCASHPVERDD@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -551,13 +551,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("012INTNOSURCASHPVERDD@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("012INTNOSURCASHPVERDD@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(5);
                 string invnumber12 = SIVPG1.InvNumber().Text;
                 string invoicenumber12 = invnumber12.Substring(invnumber12.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber12, "012INTNOSURCASHPVERDD@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber12, "012INTNOSURCASHPVERDD@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 SeleniumSetMethods.WaitOnPage(2);
                 addrecord(invoicenumber12, "approved", "FDRFactorFox.csv");
@@ -574,7 +574,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("013INTSURCASHREQMAP@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("013INTSURCASHREQMAP@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -587,13 +587,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("013INTSURCASHREQMAP@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("013INTSURCASHREQMAP@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(5);
                 string invnumber13 = SIVPG1.InvNumber().Text;
                 string invoicenumber13 = invnumber13.Substring(invnumber13.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber13, "013INTSURCASHREQMAP@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber13, "013INTSURCASHREQMAP@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 InvList("invoicenumber13", invoicenumber13, "stringlist.txt");
                 //Internal Cash    Yes Approved    MAP BOBO    14INTSURCASHAPPMAPBOBO@
@@ -607,7 +607,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("014INTSURCASHAPPMAPBOBO@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("014INTSURCASHAPPMAPBOBO@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -620,13 +620,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("014INTSURCASHAPPMAPBOBO@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("014INTSURCASHAPPMAPBOBO@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(5);
                 string invnumber14 = SIVPG1.InvNumber().Text;
                 string invoicenumber14 = invnumber14.Substring(invnumber14.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber14, "014INTSURCASHAPPMAPBOBO@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber14, "014INTSURCASHAPPMAPBOBO@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 addrecord(invoicenumber14, "approved", "FDRFactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(1);
@@ -642,7 +642,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("015INTSURCASHBATMAPBOBO@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("015INTSURCASHBATMAPBOBO@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -655,13 +655,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("015INTSURCASHBATMAPBOBO@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("015INTSURCASHBATMAPBOBO@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(5);
                 string invnumber15 = SIVPG1.InvNumber().Text;
                 string invoicenumber15 = invnumber15.Substring(invnumber15.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber15, "015INTSURCASHBATMAPBOBO@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber15, "015INTSURCASHBATMAPBOBO@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 addrecord(invoicenumber15, "approved", "FDRFactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(1);
@@ -678,7 +678,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("016INTSURCASHFUNMAPBOBO@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("016INTSURCASHFUNMAPBOBO@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -691,13 +691,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("016INTSURCASHFUNMAPBOBO@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("016INTSURCASHFUNMAPBOBO@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(5);
                 string invnumber16 = SIVPG1.InvNumber().Text;
                 string invoicenumber16 = invnumber16.Substring(invnumber16.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber16, "016INTSURCASHFUNMAPBOBO@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber16, "016INTSURCASHFUNMAPBOBO@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 addrecord(invoicenumber16, "approved", "FDRFactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(1);
@@ -714,7 +714,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("017INTSURCASHDECMAPBOBO@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("017INTSURCASHDECMAPBOBO@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -727,13 +727,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("017INTSURCASHDECMAPBOBO@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("017INTSURCASHDECMAPBOBO@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(5);
                 string invnumber17 = SIVPG1.InvNumber().Text;
                 string invoicenumber17 = invnumber17.Substring(invnumber17.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber17, "017INTSURCASHDECMAPBOBO@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber17, "017INTSURCASHDECMAPBOBO@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 InvList("invoicenumber17", invoicenumber17, "stringlist.txt");
                 //Internal Cash    Yes FFApproved  MAP BOBO    18INTSURCASHFFAMAPBOBO@
@@ -747,7 +747,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("018INTSURCASHFFAMAPBOBO@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("018INTSURCASHFFAMAPBOBO@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -760,13 +760,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("018INTSURCASHFFAMAPBOBO@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("018INTSURCASHFFAMAPBOBO@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string invnumber18 = SIVPG1.InvNumber().Text;
                 string invoicenumber18 = invnumber18.Substring(invnumber18.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber18, "018INTSURCASHFFAMAPBOBO@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber18, "018INTSURCASHFFAMAPBOBO@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 addrecord(invoicenumber18, "approved", "FDRFactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(1);
@@ -782,7 +782,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("019EXTSURCASHREQCC@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("019EXTSURCASHREQCC@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -795,13 +795,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("019EXTSURCASHREQCC@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("019EXTSURCASHREQCC@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string invnumber19 = SIVPG1.InvNumber().Text;
                 string invoicenumber19 = invnumber19.Substring(invnumber19.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber19, "019EXTSURCASHREQCC@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber19, "019EXTSURCASHREQCC@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 InvList("invoicenumber19", invoicenumber19, "stringlist.txt");
                 //External Cash    No Requested   BPAY    20EXTNOSURCASHREQBPAY@
@@ -815,7 +815,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("020EXTNOSURCASHREQBPAY@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("020EXTNOSURCASHREQBPAY@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -828,13 +828,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("020EXTNOSURCASHREQBPAY@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("020EXTNOSURCASHREQBPAY@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string invnumber20 = SIVPG1.InvNumber().Text;
                 string invoicenumber20 = invnumber20.Substring(invnumber20.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber20, "020EXTNOSURCASHREQBPAY@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber20, "020EXTNOSURCASHREQBPAY@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 InvList("invoicenumber20", invoicenumber20, "stringlist.txt");
                 //External Cash    Yes Approved    CC  21EXTSURCASHAPPCC@
@@ -848,7 +848,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("021EXTSURCASHAPPCC@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("021EXTSURCASHAPPCC@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -861,13 +861,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("021EXTSURCASHAPPCC@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("021EXTSURCASHAPPCC@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string invnumber21 = SIVPG1.InvNumber().Text;
                 string invoicenumber21 = invnumber21.Substring(invnumber21.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber21, "021EXTSURCASHAPPCC@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber21, "021EXTSURCASHAPPCC@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 addrecord(invoicenumber21, "approved", "FDRFactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(1);
@@ -883,7 +883,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("022EXTNOSURCASHAPPBPAY@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("022EXTNOSURCASHAPPBPAY@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -896,13 +896,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("022EXTNOSURCASHAPPBPAY@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("022EXTNOSURCASHAPPBPAY@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string invnumber22 = SIVPG1.InvNumber().Text;
                 string invoicenumber22 = invnumber22.Substring(invnumber22.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber22, "022EXTNOSURCASHAPPBPAY@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber22, "022EXTNOSURCASHAPPBPAY@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 addrecord(invoicenumber22, "approved", "FDRFactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(1);
@@ -918,7 +918,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("023EXTSURCASHBATCC@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("023EXTSURCASHBATCC@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -931,13 +931,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("023EXTSURCASHBATCC@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("023EXTSURCASHBATCC@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string invnumber23 = SIVPG1.InvNumber().Text;
                 string invoicenumber23 = invnumber23.Substring(invnumber23.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber23, "023EXTSURCASHBATCC@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber23, "023EXTSURCASHBATCC@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 addrecord(invoicenumber23, "approved", "FDRFactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(1);
@@ -953,7 +953,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("024EXTNOSURCASHBATBPAY@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("024EXTNOSURCASHBATBPAY@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -966,13 +966,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("024EXTNOSURCASHBATBPAY@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("024EXTNOSURCASHBATBPAY@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string invnumber24 = SIVPG1.InvNumber().Text;
                 string invoicenumber24 = invnumber24.Substring(invnumber24.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber24, "024EXTNOSURCASHBATBPAY@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber24, "024EXTNOSURCASHBATBPAY@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 addrecord(invoicenumber24, "approved", "FDRFactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(1);
@@ -988,7 +988,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("025EXTSURCASHFUNCC@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("025EXTSURCASHFUNCC@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1001,13 +1001,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("025EXTSURCASHFUNCC@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("025EXTSURCASHFUNCC@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string invnumber25 = SIVPG1.InvNumber().Text;
                 string invoicenumber25 = invnumber25.Substring(invnumber25.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber25, "025EXTSURCASHFUNCC@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber25, "025EXTSURCASHFUNCC@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 addrecord(invoicenumber25, "approved", "FDRFactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(1);
@@ -1024,7 +1024,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("026EXTSNOSURCASHFUNBPAY@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("026EXTSNOSURCASHFUNBPAY@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1037,13 +1037,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("026EXTSNOSURCASHFUNBPAY@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("026EXTSNOSURCASHFUNBPAY@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string invnumber26 = SIVPG1.InvNumber().Text;
                 string invoicenumber26 = invnumber26.Substring(invnumber26.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber26, "026EXTSNOSURCASHFUNBPAY@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber26, "026EXTSNOSURCASHFUNBPAY@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 addrecord(invoicenumber26, "approved", "FDRFactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(1);
@@ -1059,7 +1059,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("027EXTSURCASHDECCC@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("027EXTSURCASHDECCC@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1072,13 +1072,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("027EXTSURCASHDECCC@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("027EXTSURCASHDECCC@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string invnumber27 = SIVPG1.InvNumber().Text;
                 string invoicenumber27 = invnumber27.Substring(invnumber27.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber27, "027EXTSURCASHDECCC@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber27, "027EXTSURCASHDECCC@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 InvList("invoicenumber27", invoicenumber27, "stringlist.txt");
 
@@ -1093,7 +1093,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("028EXTNOSURCASHDECBPAY@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("028EXTNOSURCASHDECBPAY@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1106,13 +1106,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("028EXTNOSURCASHDECBPAY@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("028EXTNOSURCASHDECBPAY@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string invnumber28 = SIVPG1.InvNumber().Text;
                 string invoicenumber28 = invnumber28.Substring(invnumber28.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber28, "028EXTNOSURCASHDECBPAY@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber28, "028EXTNOSURCASHDECBPAY@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 InvList("invoicenumber28", invoicenumber28, "stringlist.txt");
                 //External Cash    Yes Requested   MAP BOBO    29EXTSURCASHREQMAPBOBO@
@@ -1126,7 +1126,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("029EXTSURCASHREQMAPBOBO@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("029EXTSURCASHREQMAPBOBO@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1139,13 +1139,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("029EXTSURCASHREQMAPBOBO@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("029EXTSURCASHREQMAPBOBO@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string invnumber29 = SIVPG1.InvNumber().Text;
                 string invoicenumber29 = invnumber29.Substring(invnumber29.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber29, "029EXTSURCASHREQMAPBOBO@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber29, "029EXTSURCASHREQMAPBOBO@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 InvList("invoicenumber29", invoicenumber29, "stringlist.txt");
                 //External Cash    Yes Approved    MAP BOBO    30EXTSURCASHAPPMAPBOBO@
@@ -1159,7 +1159,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("030EXTSURCASHAPPMAPBOBO@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("030EXTSURCASHAPPMAPBOBO@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1172,13 +1172,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("030EXTSURCASHAPPMAPBOBO@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("030EXTSURCASHAPPMAPBOBO@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string invnumber30 = SIVPG1.InvNumber().Text;
                 string invoicenumber30 = invnumber30.Substring(invnumber30.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber30, "030EXTSURCASHAPPMAPBOBO@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber30, "030EXTSURCASHAPPMAPBOBO@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 addrecord(invoicenumber30, "approved", "FDRFactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(1);
@@ -1195,7 +1195,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("031EXTSURCASHBATMAPBOBO@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("031EXTSURCASHBATMAPBOBO@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1208,13 +1208,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("031EXTSURCASHBATMAPBOBO@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("031EXTSURCASHBATMAPBOBO@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string invnumber31 = SIVPG1.InvNumber().Text;
                 string invoicenumber31 = invnumber31.Substring(invnumber31.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber31, "031EXTSURCASHBATMAPBOBO@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber31, "031EXTSURCASHBATMAPBOBO@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 addrecord(invoicenumber31, "approved", "FDRFactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(1);
@@ -1230,7 +1230,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("032EXTSURCASHFUNMAPBOBO@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("032EXTSURCASHFUNMAPBOBO@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1243,13 +1243,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("032EXTSURCASHFUNMAPBOBO@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("032EXTSURCASHFUNMAPBOBO@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string invnumber32 = SIVPG1.InvNumber().Text;
                 string invoicenumber32 = invnumber32.Substring(invnumber32.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber32, "032EXTSURCASHFUNMAPBOBO@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber32, "032EXTSURCASHFUNMAPBOBO@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 addrecord(invoicenumber32, "approved", "FDRFactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(1);
@@ -1265,7 +1265,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("033EXTSURCASHDECMAPBOBO@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("033EXTSURCASHDECMAPBOBO@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1278,13 +1278,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("033EXTSURCASHDECMAPBOBO@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("033EXTSURCASHDECMAPBOBO@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string invnumber33 = SIVPG1.InvNumber().Text;
                 string invoicenumber33 = invnumber33.Substring(invnumber33.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber33, "033EXTSURCASHDECMAPBOBO@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber33, "033EXTSURCASHDECMAPBOBO@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 InvList("invoicenumber33", invoicenumber33, "stringlist.txt");
                 //External Cash    Yes FFApproved  MAP BOBO    34EXTSURCASHFFAMAPBOBO@
@@ -1298,7 +1298,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("034EXTSURCASHFFAMAPBOBO@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("034EXTSURCASHFFAMAPBOBO@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1311,13 +1311,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(5);
-                SendPg.SearchInvoiceSent().SendKeys("034EXTSURCASHFFAMAPBOBO@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("034EXTSURCASHFFAMAPBOBO@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string invnumber34 = SIVPG1.InvNumber().Text;
                 string invoicenumber34 = invnumber34.Substring(invnumber34.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber34, "034EXTSURCASHFFAMAPBOBO@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber34, "034EXTSURCASHFFAMAPBOBO@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(2);
                 addrecord(invoicenumber34, "approved", "FDRFactorFox.csv");
                 SeleniumSetMethods.WaitOnPage(1);
@@ -1333,7 +1333,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("040NORINTSURCC@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("040NORINTSURCC@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("200");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1346,13 +1346,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 SendPg.SentOutstandingBTN().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                SendPg.SearchInvoiceSent().SendKeys("040NORINTSURCC@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("040NORINTSURCC@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string ffinvnumber1 = SIVPG1.InvNumber().Text;
                 string invoicenumber40 = ffinvnumber1.Substring(ffinvnumber1.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber40, "040NORINTSURCC@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber40, "040NORINTSURCC@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(4);
                 InvList("invoicenumber40", invoicenumber40, "stringlist.txt");
                 //Issue Invoice - Normal - Int	No Surcharge	Card	NORINTNOSURCC
@@ -1366,7 +1366,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("041NORINTNOSURCC@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("041NORINTNOSURCC@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1378,13 +1378,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 SendPg.SentOutstandingBTN().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                SendPg.SearchInvoiceSent().SendKeys("041NORINTNOSURCC@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("041NORINTNOSURCC@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string ffinvnumber2 = SIVPG1.InvNumber().Text;
                 string invoicenumber41 = ffinvnumber2.Substring(ffinvnumber2.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber41, "041NORINTNOSURCC@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber41, "041NORINTNOSURCC@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 InvList("invoicenumber41", invoicenumber41, "stringlist.txt");
 
                 //Issue Invoice - Normal - Int	Surcharge	Bank	NORINTSURDD
@@ -1398,7 +1398,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("042NORINTSURDD@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("042NORINTSURDD@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("60");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1411,13 +1411,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 SendPg.SentOutstandingBTN().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                SendPg.SearchInvoiceSent().SendKeys("042NORINTSURDD@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("042NORINTSURDD@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string ffinvnumber3 = SIVPG1.InvNumber().Text;
                 string invoicenumber42 = ffinvnumber3.Substring(ffinvnumber3.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber42, "042NORINTSURDD@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber42, "042NORINTSURDD@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 InvList("invoicenumber42", invoicenumber42, "stringlist.txt");
 
                 //Issue Invoice -Normal - Int	No Surcharge	Bank	NORINTNOSURDD
@@ -1431,7 +1431,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("043NORINTNOSURDD@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("043NORINTNOSURDD@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("50");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1443,13 +1443,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 SendPg.SentOutstandingBTN().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                SendPg.SearchInvoiceSent().SendKeys("043NORINTNOSURDD@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("043NORINTNOSURDD@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string ffinvnumber4 = SIVPG1.InvNumber().Text;
                 string invoicenumber43 = ffinvnumber4.Substring(ffinvnumber4.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber43, "043NORINTNOSURDD@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber43, "043NORINTNOSURDD@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 InvList("invoicenumber43", invoicenumber43, "stringlist.txt");
 
                 //Issue Invoice -Normal - Ext	Surcharge	Card	NOREXTSURCC
@@ -1463,7 +1463,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("044NOREXTSURCC@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("044NOREXTSURCC@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("200");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1476,13 +1476,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 SendPg.SentOutstandingBTN().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                SendPg.SearchInvoiceSent().SendKeys("044NOREXTSURCC@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("044NOREXTSURCC@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string ffinvnumber5 = SIVPG1.InvNumber().Text;
                 string invoicenumber44 = ffinvnumber5.Substring(ffinvnumber5.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber44, "044NOREXTSURCC@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber44, "044NOREXTSURCC@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(4);
                 InvList("invoicenumber44", invoicenumber44, "stringlist.txt");
 
@@ -1497,7 +1497,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("045NOREXTNOSURCC@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("045NOREXTNOSURCC@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1509,13 +1509,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 SendPg.SentOutstandingBTN().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                SendPg.SearchInvoiceSent().SendKeys("045NOREXTNOSURCC@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("045NOREXTNOSURCC@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string ffinvnumber6 = SIVPG1.InvNumber().Text;
                 string invoicenumber45 = ffinvnumber6.Substring(ffinvnumber6.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber45, "045NOREXTNOSURCC@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber45, "045NOREXTNOSURCC@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 InvList("invoicenumber45", invoicenumber45, "stringlist.txt");
 
                 //Issue Invoice -Deal - Int	Surcharge	Card	DEALSURCC
@@ -1529,7 +1529,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("046DEALINTSURCC@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("046DEALINTSURCC@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("60");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1551,13 +1551,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 SendPg.SentOutstandingBTN().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                SendPg.SearchInvoiceSent().SendKeys("046DEALINTSURCC@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("046DEALINTSURCC@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string ffinvnumber7 = SIVPG1.InvNumber().Text;
                 string invoicenumber46 = ffinvnumber7.Substring(ffinvnumber7.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber46, "046DEALINTSURCC@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber46, "046DEALINTSURCC@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 InvList("invoicenumber46", invoicenumber46, "stringlist.txt");
 
                 //Issue Invoice -Deal - Int	No Surcharge	Card	DEALNOSURCC
@@ -1571,7 +1571,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("047DEALINTNOSURCC@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("047DEALINTNOSURCC@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("50");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1591,13 +1591,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 SendPg.SentOutstandingBTN().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                SendPg.SearchInvoiceSent().SendKeys("047DEALINTNOSURCC@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("047DEALINTNOSURCC@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string ffinvnumber8 = SIVPG1.InvNumber().Text;
                 string invoicenumber47 = ffinvnumber8.Substring(ffinvnumber8.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber47, "047DEALINTNOSURCC@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber47, "047DEALINTNOSURCC@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(4);
                 InvList("invoicenumber47", invoicenumber47, "stringlist.txt");
                 //Issue Invoice -Deal - Int	Surcharge	Bank	DEALSURDD
@@ -1611,7 +1611,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("048DEALINTSURDD@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("048DEALINTSURDD@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("200");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1631,13 +1631,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 SendPg.SentOutstandingBTN().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                SendPg.SearchInvoiceSent().SendKeys("048DEALINTSURDD@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("048DEALINTSURDD@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string ffinvnumber9 = SIVPG1.InvNumber().Text;
                 string invoicenumber48 = ffinvnumber9.Substring(ffinvnumber9.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber48, "048DEALINTSURDD@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber48, "048DEALINTSURDD@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(4);
                 InvList("invoicenumber48", invoicenumber48, "stringlist.txt");
                 //Issue Invoice -Deal - Int	No Surcharge	Bank	DEALNOSURDD
@@ -1652,7 +1652,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("049DEALINTNOSURDD@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("049DEALINTNOSURDD@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1672,13 +1672,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 SendPg.SentOutstandingBTN().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                SendPg.SearchInvoiceSent().SendKeys("049DEALINTNOSURDD@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("049DEALINTNOSURDD@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string ffinvnumber10 = SIVPG1.InvNumber().Text;
                 string invoicenumber49 = ffinvnumber10.Substring(ffinvnumber10.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber49, "049DEALINTNOSURDD@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber49, "049DEALINTNOSURDD@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 SeleniumSetMethods.WaitOnPage(4);
                 InvList("invoicenumber49", invoicenumber49, "stringlist.txt");
                 //Issue Invoice -Normal - Ext	No Surcharge	MP	NOREXTMAP
@@ -1692,7 +1692,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("050NOREXTMAPBOBO@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("050NOREXTMAPBOBO@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1704,13 +1704,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 SendPg.SentOutstandingBTN().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                SendPg.SearchInvoiceSent().SendKeys("050NOREXTMAPBOBO@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("050NOREXTMAPBOBO@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string ffinvnumber11 = SIVPG1.InvNumber().Text;
                 string invoicenumber50 = ffinvnumber11.Substring(ffinvnumber11.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber50, "050NOREXTMAPBOBO@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber50, "050NOREXTMAPBOBO@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 InvList("invoicenumber50", invoicenumber50, "stringlist.txt");
 
                 //Issue Invoice -Deal - Int	Surcharge	MP	DEALINTMAP
@@ -1724,7 +1724,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("051DEALINTSURMAPBOBO@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("051DEALINTSURMAPBOBO@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("200");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1744,13 +1744,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 SendPg.SentOutstandingBTN().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                SendPg.SearchInvoiceSent().SendKeys("051DEALINTSURMAPBOBO@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("051DEALINTSURMAPBOBO@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string ffinvnumber12 = SIVPG1.InvNumber().Text;
                 string invoicenumber51 = ffinvnumber12.Substring(ffinvnumber12.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber51, "051DEALINTSURMAPBOBO@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber51, "051DEALINTSURMAPBOBO@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 InvList("invoicenumber51", invoicenumber51, "stringlist.txt");
                 HomePg.SignOutBTN().Click();
                 SeleniumSetMethods.WaitOnPage(4);
@@ -1775,7 +1775,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 IssueInvoicePg.CreateInvoice().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("052NORUNVERSURCC@" + randnumber2);
+                IssueInvoicePg.InvoiceReferenceCreate().SendKeys("052NORUNVERSURCC@cdrfdr" + randnumber2);
                 IssueInvoicePg.Description().SendKeys("Test Invoice issued");
                 IssueInvoicePg.LineItemAmount().SendKeys("100");
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
@@ -1788,17 +1788,18 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 SendPg.SentOutstandingBTN().Click();
                 SeleniumSetMethods.WaitOnPage(2);
-                SendPg.SearchInvoiceSent().SendKeys("052NORUNVERSURCC@" + randnumber2);
+                SendPg.SearchInvoiceSent().SendKeys("052NORUNVERSURCC@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 string ffinvnumber13 = SIVPG1.InvNumber().Text;
                 string invoicenumber52 = ffinvnumber13.Substring(ffinvnumber13.IndexOf("Invoice ")).Replace("Invoice ", "");
-                FDRInvList(invoicenumber52, "052NORUNVERSURCC@" + randnumber2, "FDRInvoiceslist2.csv");
+                FDRInvList(invoicenumber52, "052NORUNVERSURCC@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 InvList("invoicenumber52", invoicenumber52, "stringlist.txt");
                 SeleniumSetMethods.WaitOnPage(4);
                 HomePg.SignOutBTN().Click();
 
+                //•	Step 2 : Approve and Decline the cash invoices as per the scenario.   
 
                 SeleniumSetMethods.WaitOnPage(4);
                 loginPg.UserNameTextBox().Click();
@@ -1857,6 +1858,8 @@ namespace BillzyAutomationTestSuite.Scripts
 
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/home");
                 SeleniumSetMethods.WaitOnPage(4);
+                
+                //•	Step 3 : Pay the invoices with Requested, Pre-approved, Approved and Declined Status
                 //Pay the requested, pre-approved, approved and declined cash invoices
 
                 loginPg.UserNameTextBox().Click();
@@ -1970,7 +1973,7 @@ namespace BillzyAutomationTestSuite.Scripts
 
                     gmailpg.Search().Click();
                     SeleniumSetMethods.WaitOnPage(2);
-                    gmailpg.Search().SendKeys(invextpayset1[i] + "@" + randnumber2);
+                    gmailpg.Search().SendKeys(invextpayset1[i] + "@cdrfdr" + randnumber2);
                     SeleniumSetMethods.WaitOnPage(2);
                     SeleniumSetMethods.WaitOnPage(2);
                     gmailpg.SearchOption().Click();
@@ -2018,7 +2021,7 @@ namespace BillzyAutomationTestSuite.Scripts
 
                     gmailpg.Search().Click();
                     SeleniumSetMethods.WaitOnPage(2);
-                    gmailpg.Search().SendKeys(invextpayset1[i] + "@" + randnumber2);
+                    gmailpg.Search().SendKeys(invextpayset1[i] + "@cdrfdr" + randnumber2);
                     SeleniumSetMethods.WaitOnPage(2);
                     SeleniumSetMethods.WaitOnPage(2);
                     gmailpg.SearchOption().Click();
@@ -2396,7 +2399,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 awspg.Signout().Click();
                 SeleniumSetMethods.WaitOnPage(2);
 
-
+                //•	Step 4 : Generate CDR and verify the latest entry status as UNSTARTED in Funds distribution table and the dist type as CASH_DIST
                 SeleniumSetMethods.WaitOnPage(2);
                 WebDriver.Navigate().GoToUrl("http://bamboo.controlplane.billzy.com:443/allPlans.action");
                 SeleniumSetMethods.WaitOnPage(4);
@@ -2459,6 +2462,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(3);
                 Bampg.Bamboologoutbutton().Click();
                 SeleniumSetMethods.WaitOnPage(3);
+                //•	Step 5 : Cancel CDR Batch in FinCon and verify the latest entry status as CANCELLED in Funds distribution table and the dist type as CASH_DIST
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/home");
                 loginPg.UserNameTextBox().Click();
                 SeleniumSetMethods.WaitOnPage(2);
@@ -2487,7 +2491,30 @@ namespace BillzyAutomationTestSuite.Scripts
                 alert02.Accept();
                 SeleniumSetMethods.WaitOnPage(3);
                 HomePg.FCLogout().Click();
-                SeleniumSetMethods.WaitOnPage(3);
+                SeleniumSetMethods.WaitOnPage(10);
+
+
+                command.CommandText = "select funds_distribution_status from billzy.funds_distribution order by id desc limit 1;";
+                try
+                {
+                    conn.Open();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                MySqlDataReader reader0 = command.ExecuteReader();
+                string funds_distribution_status0;
+                while (reader0.Read())
+                {
+                    Console.WriteLine(reader0["funds_distribution_status"].ToString());
+                }
+                funds_distribution_status0 = reader0["funds_distribution_status"].ToString();
+                conn.Close();
+                SeleniumSetMethods.WaitOnPage(2);
+                Assert.IsTrue(funds_distribution_status0 == "CANCELLED");
+
+                //•	Step 6 : Generate CDR and verify the latest entry status as UNSTARTED in Funds distribution table and the dist type as CASH_DIST
                 WebDriver.Navigate().GoToUrl("http://bamboo.controlplane.billzy.com:443/allPlans.action");
                 SeleniumSetMethods.WaitOnPage(4);
                 Bampg.Login().Click();
@@ -2559,17 +2586,17 @@ namespace BillzyAutomationTestSuite.Scripts
                 {
                     Console.WriteLine(ex.Message);
                 }
-                MySqlDataReader reader0 = command.ExecuteReader();
-                string funds_distribution_status0;
-                while (reader0.Read())
+                MySqlDataReader reader010 = command.ExecuteReader();
+                string funds_distribution_status010;
+                while (reader010.Read())
                 {
-                    Console.WriteLine(reader0["funds_distribution_status"].ToString());
+                    Console.WriteLine(reader010["funds_distribution_status"].ToString());
                 }
-                funds_distribution_status0 = reader0["funds_distribution_status"].ToString();
+                funds_distribution_status010 = reader010["funds_distribution_status"].ToString();
                 conn.Close();
                 SeleniumSetMethods.WaitOnPage(2);
-                Assert.IsTrue(funds_distribution_status0 == "UNSTARTED");
-
+                Assert.IsTrue(funds_distribution_status010 == "UNSTARTED");
+                //•	Step 7 : Verify CDR for the Approved invoices 003, 005, 006, 007, 008, 012, 014, 015, 016, 023, 024, 025, 026, 031, 032
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/home");
                 loginPg.UserNameTextBox().Click();
                 SeleniumSetMethods.WaitOnPage(2);
@@ -2631,6 +2658,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(text.Contains(invoicenumber31 + "\",\"$88.00\",\"madcowtesting10+cdrfdrbiller\",\"12345678\",\"madcowtesting10+cdrfdrbiller@gmail.com\",\"receiveAccount\",\"484799\""));
                 Assert.IsTrue(text.Contains(invoicenumber32 + "\",\"$88.00\",\"madcowtesting10+cdrfdrbiller\",\"12345678\",\"madcowtesting10+cdrfdrbiller@gmail.com\",\"receiveAccount\",\"484799\""));
                 Assert.IsTrue(cdrinv1 == false && cdrinv2 == false && cdrinv4 == false && cdrinv9 == false && cdrinv10 == false && cdrinv11 == false && cdrinv13 == false && cdrinv17 == false && cdrinv18 == false && cdrinv19 == false && cdrinv20 == false && cdrinv21 == false && cdrinv22 == false && cdrinv27 == false && cdrinv28 == false && cdrinv29 == false && cdrinv30 == false && cdrinv33 == false && cdrinv34 == false);
+                //•	Step 8 : Block 1 invoice 012
                 //FC Blocks invoices from the batch file "012INTNOSURCASHPVERDD@"
                 SeleniumSetMethods.WaitOnPage(2);
                 loginPg.CDRBlockInvField().SendKeys(invoicenumber12);
@@ -2640,6 +2668,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 HomePg.FCLogout().Click();
                 SeleniumSetMethods.WaitOnPage(3);
 
+                //•	Step 9 : Pay the invoices in Approved status and included in CDR 003, 014
                 //Pay the Approved and CDR invoices 13 and 14
 
                 loginPg.UserNameTextBox().Click();
@@ -2712,7 +2741,7 @@ namespace BillzyAutomationTestSuite.Scripts
                     SeleniumSetMethods.WaitOnPage(1);
                 }
 
-
+                //•	Step 10 : Execute Transfer Request
 
                 SeleniumSetMethods.WaitOnPage(3);
                 WebDriver.Navigate().GoToUrl("http://bamboo.controlplane.billzy.com:443/allPlans.action");
@@ -2769,6 +2798,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 Bampg.Bamboologoutbutton().Click();
                 SeleniumSetMethods.WaitOnPage(3);
 
+                //•	Step 11 : Verify the latest entry status as PENDING in Funds distribution table and the dist type as CASH_DIST
                 // Verify the CDR status in databse for PENDING
                 command.CommandText = "select funds_distribution_status from billzy.funds_distribution order by id desc limit 1;";
                 try
@@ -2791,6 +2821,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(funds_distribution_status == "PENDING");
 
 
+                //•	Step 12 : Verify the Blocked invoice Cash history status. For blocked invoice, it will be till Approved and for unblocked invoices, the status will be moved from Approved to Batched.
                 // Verify the cash status in databse for BATCHED
 
 
@@ -2837,7 +2868,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(cashstate1 == "APPROVED");
 
 
-
+                //•	Step 13 : Pay the batched invoices [005, 006, 015, 023, 024, 031]
                 //Pay all batched invoices 5,6,15,23,24,31
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/home");
                 SeleniumSetMethods.WaitOnPage(4);
@@ -2952,7 +2983,7 @@ namespace BillzyAutomationTestSuite.Scripts
 
                     gmailpg.Search().Click();
                     SeleniumSetMethods.WaitOnPage(2);
-                    gmailpg.Search().SendKeys(invextpayset101[i] + "@" + randnumber2);
+                    gmailpg.Search().SendKeys(invextpayset101[i] + "@cdrfdr" + randnumber2);
                     SeleniumSetMethods.WaitOnPage(2);
                     SeleniumSetMethods.WaitOnPage(2);
                     gmailpg.SearchOption().Click();
@@ -3329,6 +3360,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 awspg.Signout().Click();
                 SeleniumSetMethods.WaitOnPage(6);
 
+                //•	Step 14 : Execute the Capital Distribution
                 //Execute Capital distribution
 
                 //Execute Upload against Capital Distribution
@@ -3601,8 +3633,29 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(none.Contains("None"));
                 SeleniumSetMethods.WaitOnPage(5);
 
-
+                //•	Step 15 : Verify the latest entry status as COMPLETED in Funds distribution table and the dist type as CASH_DIST and Cash history status as Funded for the Step 14 invoices
                 // Verify the cash status in databse for FUNDED
+
+                command.CommandText = "select funds_distribution_status from billzy.funds_distribution order by id desc limit 1;";
+                try
+                {
+                    conn.Open();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                MySqlDataReader reader020 = command.ExecuteReader();
+                string funds_distribution_status020;
+                while (reader020.Read())
+                {
+                    Console.WriteLine(reader020["funds_distribution_status"].ToString());
+                }
+                funds_distribution_status020 = reader020["funds_distribution_status"].ToString();
+                conn.Close();
+                SeleniumSetMethods.WaitOnPage(2);
+                Assert.IsTrue(funds_distribution_status020 == "COMPLETED");
+
 
 
                 command.CommandText = "select inv.id, ch.cash_state  from billzy.invoice inv left join billzy.cash_history ch on inv.id = ch.invoice_financed_id where invoice_number = '" + invoicenumber5 + "' order by id asc;";
@@ -3625,6 +3678,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(2);
                 Assert.IsTrue(cashstate33 == "FUNDED");
                 SeleniumSetMethods.WaitOnPage(5);
+                //•	Step 16 : Update the Created date of 1 funded invoice to 40 days back in cash history table  007
 
                 string Created12 = DateTime.Now.AddDays(-40).ToString("yyyy-MM-dd HH:mm:ss");
                 //string invoicenumber7 = "INV10362200";
@@ -3666,7 +3720,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(5);
 
                 //validate the paid timestamp
-                command.CommandText = "SELECT invoice_financed_id,created_at FROM billzy.cash_history where invoice_financed_id in  ('" + id + "');";
+                command.CommandText = "SELECT created_at FROM billzy.cash_history where invoice_financed_id in  ('" + id + "');";
                 try
                 {
                     conn.Open();
@@ -3688,7 +3742,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(5);
 
 
-
+                //•	Step 17 : Pay all funded and deal invoices 007, 008, 016, 025, 026, 032, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052
                 //pay all other invoices 7,8,16,25,26,40,41,42,43,44,45,46,47,48,49,50,51, 12
                 //Pay all batched invoices 5,6,15,23,24,31
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/home");
@@ -3757,7 +3811,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 loginPg.LoginButton().Click();
                 SeleniumSetMethods.WaitOnPage(7);
 
-                Recpg.SearchInvoiceReceived().SendKeys("052NORUNVERSURCC@" + randnumber2);
+                Recpg.SearchInvoiceReceived().SendKeys("052NORUNVERSURCC@cdrfdr" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(5);
                 Recpg.SelectInvoiceRow01().Click();
                 SeleniumSetMethods.WaitOnPage(2);
@@ -3832,7 +3886,7 @@ namespace BillzyAutomationTestSuite.Scripts
 
                     gmailpg.Search().Click();
                     SeleniumSetMethods.WaitOnPage(2);
-                    gmailpg.Search().SendKeys(invextpayset1001[i] + "@" + randnumber2);
+                    gmailpg.Search().SendKeys(invextpayset1001[i] + "@cdrfdr" + randnumber2);
                     SeleniumSetMethods.WaitOnPage(2);
                     SeleniumSetMethods.WaitOnPage(2);
                     gmailpg.SearchOption().Click();
@@ -4210,6 +4264,8 @@ namespace BillzyAutomationTestSuite.Scripts
                 awspg.Signout().Click();
                 SeleniumSetMethods.WaitOnPage(6);
 
+                //•	Step 18 : Execute the Trust Transfer
+
                 SeleniumSetMethods.WaitOnPage(2);
                 WebDriver.Manage().Window.Maximize();
                 WebDriver.Navigate().GoToUrl("http://bamboo.controlplane.billzy.com:443/allPlans.action");
@@ -4473,9 +4529,9 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(3);
                 SeleniumSetMethods.WaitOnPage(3);
 
+                //•	Step 19 : Verify the bank paid invoice status for successful from processing 002, 004, 006, 008, 010, 012, 042, 043, 048, 049
                 // Verify the invoice status in databse for SUCCESSFUL
-
-
+                
                 command.CommandText = "select invoice_number, status from billzy.invoice where reference in ('" + invoicenumber49 + "');";
                 try
                 {
@@ -4497,6 +4553,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(cashstate55 == "SUCCESSFUL");
                 SeleniumSetMethods.WaitOnPage(5);
 
+                //•	Step 20 : Backdate the paid timestamp of all invoices in receivable & invoice amount submitted table
                 //Get the test string data for backdateing
 
                 DateTime duedate11 = DateTime.Today.AddDays(-3);
@@ -4602,10 +4659,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(receivabledate2.Contains(dtString120));
                 SeleniumSetMethods.WaitOnPage(5);
 
-
-
-
-
+                //•	Step 21 : Generate FDR and verify the latest entry status as UNSTARTED in Funds distribution table and the dist type as FUNDS_DIST                                             
                 WebDriver.Manage().Window.Maximize();
                 WebDriver.Navigate().GoToUrl("http://bamboo.controlplane.billzy.com:443/allPlans.action");
 
@@ -4668,6 +4722,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 Bampg.Bamboologoutbutton().Click();
                 SeleniumSetMethods.WaitOnPage(3);
 
+                //•	Step 22 : Cancel FDR Batch in FinCon and verify the latest entry status as CANCELLED in Funds distribution table and the dist type as FUNDS_DIST
                 //FC Login to verify FDR is generated or not
 
 
@@ -4699,6 +4754,28 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(3);
                 HomePg.FCLogout().Click();
                 SeleniumSetMethods.WaitOnPage(3);
+
+                command.CommandText = "select funds_distribution_status from billzy.funds_distribution order by id desc limit 1;";
+                try
+                {
+                    conn.Open();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                MySqlDataReader reader030 = command.ExecuteReader();
+                string funds_distribution_status030;
+                while (reader030.Read())
+                {
+                    Console.WriteLine(reader030["funds_distribution_status"].ToString());
+                }
+                funds_distribution_status030 = reader030["funds_distribution_status"].ToString();
+                conn.Close();
+                SeleniumSetMethods.WaitOnPage(2);
+                Assert.IsTrue(funds_distribution_status030 == "CANCELLED");
+                //•	Step 23 : Generate FDR and verify the latest entry status as UNSTARTED in Funds distribution table and the dist type as FUNDS_DIST
+
                 SeleniumSetMethods.WaitOnPage(2);
                 WebDriver.Manage().Window.Maximize();
                 WebDriver.Navigate().GoToUrl("http://bamboo.controlplane.billzy.com:443/allPlans.action");
@@ -4762,6 +4839,29 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(3);
                 Bampg.Bamboologoutbutton().Click();
                 SeleniumSetMethods.WaitOnPage(3);
+
+                command.CommandText = "select funds_distribution_status from billzy.funds_distribution order by id desc limit 1;";
+                try
+                {
+                    conn.Open();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                MySqlDataReader reader040 = command.ExecuteReader();
+                string funds_distribution_status040;
+                while (reader040.Read())
+                {
+                    Console.WriteLine(reader040["funds_distribution_status"].ToString());
+                }
+                funds_distribution_status040 = reader040["funds_distribution_status"].ToString();
+                conn.Close();
+                SeleniumSetMethods.WaitOnPage(2);
+                Assert.IsTrue(funds_distribution_status040 == "UNSTARTED");
+
+                //•	Step 24 : Verify all 47 invoices Distribution Type, Amount and Account Name.
+
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/home");
                 loginPg.UserNameTextBox().Click();
                 SeleniumSetMethods.WaitOnPage(2);

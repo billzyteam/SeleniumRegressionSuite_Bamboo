@@ -73,7 +73,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(err1 == true && err2 == true);
                 IssueInvoicePg.PdfUploadFileBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
-                IssueInvoicePg.uploadPDF().SendKeys(@"C:\Users\BillzyAdmin\Documents\Visual Studio 2019\Projects\BillzyAutomationTestSuite\Invoice.pdf");
+                IssueInvoicePg.uploadPDF().SendKeys(@"C:\Users\Selenium\Desktop\SeleniumRegressionSuite_Bamboo\Invoice.pdf");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 IssueInvoicePg.UploadAmount().SendKeys("123.19");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
@@ -100,7 +100,7 @@ namespace BillzyAutomationTestSuite.Scripts
             }
         }
 
-        [Test]
+       /* [Test]
         public void IssueInvoice02_ExternalPayer_UploadInvoice_GST_Surcharge()
         {
             HomePage HomePg = new HomePage(WebDriver);
@@ -352,7 +352,7 @@ namespace BillzyAutomationTestSuite.Scripts
             }
         }
 
-       
+*/       
 
     }
 }

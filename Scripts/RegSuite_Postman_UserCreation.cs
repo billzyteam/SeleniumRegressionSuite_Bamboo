@@ -285,23 +285,24 @@ namespace BillzyAutomationTestSuite.Scripts
                     AddCustomerPg.Suburb().SendKeys("Murarrie");
                     AddCustomerPg.Postcode().SendKeys("4172");
                     AddCustomerPg.AddBTN().Click();
-                    SeleniumSetMethods.WaitOnPage(secdelay3);
+                    SeleniumSetMethods.WaitOnPage(secdelay5);
 
                     // Invoice Creation @amountGst.default 			= $1,000.00
                     IssueInvoicePg.CreateInvoice().Click();
-                    IssueInvoicePg.InvoiceReferenceCreate().SendKeys("INVNEW@" + randnumber1);
+                    IssueInvoicePg.InvoiceReferenceCreate().SendKeys("INVNEW@"+ randnumber1);
                     IssueInvoicePg.Description().SendKeys("Test Invoice issued to External Payer");
                     IssueInvoicePg.LineItemAmount().SendKeys("1010");
                     IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
                     IssueInvoicePg.SendInvoiceBTN().Click();
+                    SeleniumSetMethods.WaitOnPage(secdelay7);
                     Console.WriteLine("InvoiceCreated");
                     HomePg.SentBTN().Click();
-                    SeleniumSetMethods.WaitOnPage(secdelay2);
+                    SeleniumSetMethods.WaitOnPage(secdelay7);
 
                     SendPg.SentOutstandingBTN().Click();
-                    SeleniumSetMethods.WaitOnPage(secdelay2);
-                    SendPg.SearchInvoiceSent().SendKeys("INVNEW@" + randnumber1);
-                    SeleniumSetMethods.WaitOnPage(secdelay2);
+                    SeleniumSetMethods.WaitOnPage(secdelay7);
+                    SendPg.SearchInvoiceSent().SendKeys("INVNEW@"+ randnumber1);
+                    SeleniumSetMethods.WaitOnPage(secdelay10);
                     SendPg.BillzyRefResult().Click();
                     SeleniumSetMethods.WaitOnPage(secdelay4);
 
