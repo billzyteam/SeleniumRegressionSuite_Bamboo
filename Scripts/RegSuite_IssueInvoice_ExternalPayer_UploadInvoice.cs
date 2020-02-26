@@ -86,7 +86,8 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay5);
                 SendPg.SearchInvoiceSent().SendKeys("Ext-Inv@" + randnumber1);
-                SeleniumSetMethods.WaitOnPage(secdelay2);
+                SeleniumSetMethods.WaitOnPage(secdelay10);
+                SeleniumSetMethods.WaitOnPage(10);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay3);
 
