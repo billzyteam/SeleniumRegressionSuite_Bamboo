@@ -90,7 +90,7 @@ namespace BillzyAutomationTestSuite.Scripts
                  SeleniumSetMethods.WaitOnPage(50);
                 IWebElement bodyTag4 = WebDriver.FindElement(By.TagName("body"));
                 SeleniumSetMethods.WaitOnPage(secdelay3);
-                Console.WriteLine(bodyTag4);
+                Console.WriteLine(bodyTag4.Text);
                 SendPg.InvoiceSelection().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay3);
 
