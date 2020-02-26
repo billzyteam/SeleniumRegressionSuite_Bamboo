@@ -87,7 +87,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay5);
                 SendPg.SearchInvoiceSent().SendKeys("Ext-Inv@" + randnumber1);
                 SeleniumSetMethods.WaitOnPage(secdelay10);
-                SeleniumSetMethods.WaitOnPage(10);
+                 SeleniumSetMethods.WaitOnPage(100);
                 SendPg.InvoiceSelection().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay3);
 
@@ -100,8 +100,9 @@ namespace BillzyAutomationTestSuite.Scripts
                 HomePg.SignOutBTN().Click();
             }
         }
+        /*
 
-       /* [Test]
+        [Test]
         public void IssueInvoice02_ExternalPayer_UploadInvoice_GST_Surcharge()
         {
             HomePage HomePg = new HomePage(WebDriver);
@@ -170,7 +171,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay5);
                 SendPg.SearchInvoiceSent().SendKeys("Ext-Inv@" + randnumber1);
-                SeleniumSetMethods.WaitOnPage(secdelay2);
+                SeleniumSetMethods.WaitOnPage(secdelay7);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay3);
 
@@ -253,7 +254,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay5);
                 SendPg.SearchInvoiceSent().SendKeys("Ext-Inv@" + randnumber1);
-                SeleniumSetMethods.WaitOnPage(secdelay2);
+                SeleniumSetMethods.WaitOnPage(secdelay7);
                 
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay3);
@@ -338,7 +339,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay5);
                 SendPg.SearchInvoiceSent().SendKeys("Ext-Inv@" + randnumber1);
-                SeleniumSetMethods.WaitOnPage(secdelay2);
+                SeleniumSetMethods.WaitOnPage(secdelay7);
 
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay3);
