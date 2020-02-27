@@ -405,7 +405,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 WebDriver.Manage().Window.Maximize();
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/home");
                 LoginPage loginPage = new LoginPage(WebDriver);
-
+                SeleniumSetMethods.WaitOnPage(secdelay4);
 
                 loginPage.UserNameTextBox().Click();
                 loginPage.UserNameTextBox().SendKeys("madcowtesting10+asplit01@gmail.com");
@@ -634,7 +634,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 WebDriver.Manage().Window.Maximize();
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/home");
                 LoginPage loginPage = new LoginPage(WebDriver);
-
+                SeleniumSetMethods.WaitOnPage(secdelay4);
 
                 loginPage.UserNameTextBox().Click();
                 loginPage.UserNameTextBox().SendKeys("madcowtesting10+asplit01@gmail.com");
@@ -824,7 +824,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 WebDriver.Manage().Window.Maximize();
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/home");
                 LoginPage loginPage = new LoginPage(WebDriver);
-
+                SeleniumSetMethods.WaitOnPage(secdelay4);
 
                 loginPage.UserNameTextBox().Click();
                 loginPage.UserNameTextBox().SendKeys("madcowtesting10+asplit01@gmail.com");

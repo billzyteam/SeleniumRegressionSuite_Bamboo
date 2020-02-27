@@ -1429,11 +1429,11 @@ namespace BillzyAutomationTestSuite.Scripts
                 loginPage.PasswordTextBox().SendKeys("Cognito1");
 
                 loginPage.LoginButton().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay3);
+                SeleniumSetMethods.WaitOnPage(secdelay7);
                 SendPg.SentBTN().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay3);
+                SeleniumSetMethods.WaitOnPage(secdelay7);
                 SendPg.SentHistoryBTN().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay4);
+                SeleniumSetMethods.WaitOnPage(secdelay7);
                 SendPg.SearchInvoiceSent().SendKeys("INVDEAL@" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(secdelay7);
                 bool OfferSentIcon14 = SendPg.OfferWithdrawnIcon().Displayed;

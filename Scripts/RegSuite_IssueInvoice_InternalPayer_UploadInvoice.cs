@@ -94,14 +94,15 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(due11.Contains(SentPgDueDate3));
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay3);
-
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+
+            }
+            finally
+            {
+               
             }
         }
 
@@ -182,14 +183,14 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(due11.Contains(SentPgDueDate3));
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay3);
-
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+            }
+            finally
+            {
+               
             }
         }
 
@@ -262,14 +263,14 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(due11.Contains(SentPgDueDate3));
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay3);
-
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+            }
+            finally
+            {
+               
             }
         }
 
@@ -342,14 +343,14 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(due11.Contains(SentPgDueDate3));
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay3);
-
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+            }
+            finally
+            {
+               
             }
         }
 
@@ -430,14 +431,15 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(due11.Contains(SentPgDueDate3));
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay3);
-
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+
+            }
+            finally
+            {
+               
             }
         }
         [Test]
@@ -517,14 +519,15 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(due11.Contains(SentPgDueDate3));
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay3);
-
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+
+            }
+            finally
+            {
+               
             }
         }
 
@@ -595,14 +598,15 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(due11.Contains(SentPgDueDate3));
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay3);
-
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+
+            }
+            finally
+            {
+                
             }
         }
 
@@ -673,14 +677,15 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(due11.Contains(SentPgDueDate3));
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay3);
-
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+
+            }
+            finally
+            {
+               
             }
         }
 
@@ -749,14 +754,15 @@ namespace BillzyAutomationTestSuite.Scripts
                 
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay3);
-
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+
+            }
+            finally
+            {
+               
             }
         }
     }

@@ -585,7 +585,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 bool OfferExpiredIcon = Recpg.OfferExpiredIcon().Displayed;
                 String OfferStatus = Recpg.OfferStatus().Text;
 
-                SeleniumSetMethods.WaitOnPage(secdelay1);
+                SeleniumSetMethods.WaitOnPage(secdelay3);
                 string OfferExpiredhover = Recpg.Expiredhovertxt().GetAttribute("data-content");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 //Console.WriteLine("OfferExpiredhover" + OfferExpiredhover);

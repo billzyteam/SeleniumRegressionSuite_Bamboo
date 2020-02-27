@@ -109,7 +109,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 //bool VerifyVerifiedIcon1 = DebitCardPg.VerifyVerifiedIcon1().Displayed;
                 string VerifiedIcon1 = DebitCardPg.VerifyVerifiedIcon1().GetAttribute("title");
                 String DateVerified2 = DebitCardPg.DateVerified1().Text;
-                SeleniumSetMethods.WaitOnPage(secdelay2);
+                SeleniumSetMethods.WaitOnPage(secdelay5);
                 Assert.IsTrue(DateVerified2.Contains(Today) && VerifiedIcon1.Contains("Verified account"));
 
                 VerifyBankAccountPg.DeleteAccountButton().Click();
@@ -418,7 +418,7 @@ namespace BillzyAutomationTestSuite.Scripts
                     String UpdateMessage1 = MerchantPg.UpdateMessage().Text;
                     String VerifiedDate1 = MerchantPg.VerifiedDate().Text;
                     string Today = DateTime.Now.ToString("dd/MM/yyyy");
-                    SeleniumSetMethods.WaitOnPage(secdelay2);
+                    SeleniumSetMethods.WaitOnPage(secdelay5);
                     Assert.IsTrue(UpdateMessage1.Contains("If you update your merchant account you will be required to verify your new bank account details by confirming two small amounts that will be deposited into your account.") && VerifiedDate1.Contains(Today));
                     HomePg.CardMgmnt().Click();
                     SeleniumSetMethods.WaitOnPage(secdelay1);

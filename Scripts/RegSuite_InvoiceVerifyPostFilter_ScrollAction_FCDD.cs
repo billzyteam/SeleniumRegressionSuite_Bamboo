@@ -239,7 +239,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Assert.IsTrue(cashapprove1.Contains("Pending Approval") && approvebtn1 == true);
                 SeleniumSetMethods.WaitOnPage(secdelay5);
-                HomePg.Uploadfactorfox().SendKeys(@"C:\Users\BillzyAdmin\OneDrive - Billzy\BillzyTestSuite\BillzyAutomationTestSuite\bin\Debug\netcoreapp3.0\FactorFox.csv");
+                HomePg.Uploadfactorfox().SendKeys(@"C:\Users\Selenium\Desktop\SeleniumRegressionSuite_Bamboo\bin\Debug\netcoreapp3.1\FactorFox.csv");
 
                 SeleniumSetMethods.WaitOnPage(secdelay7);
                 try
@@ -984,6 +984,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 WebDriver.Manage().Window.Maximize();
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/home");
                 LoginPage loginPage = new LoginPage(WebDriver);
+                SeleniumSetMethods.WaitOnPage(secdelay4);
                 loginPage.UserNameTextBox().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 loginPage.UserNameTextBox().Clear();
@@ -1311,6 +1312,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 //Validating the received and sent tab list views by scroll down and scroll up actions to verify the invoice selection is unchanged 
                 WebDriver.Manage().Window.Maximize();
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/home");
+                SeleniumSetMethods.WaitOnPage(secdelay4);
                 LoginPage loginPage = new LoginPage(WebDriver);
                 loginPage.UserNameTextBox().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);

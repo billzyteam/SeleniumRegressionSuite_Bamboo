@@ -31,6 +31,7 @@ namespace BillzyAutomationTestSuite.Scripts
 
                 WebDriver.Manage().Window.Maximize();
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/home");
+                SeleniumSetMethods.WaitOnPage(secdelay4);
                 LoginPage loginPage = new LoginPage(WebDriver);
                 loginPage.UserNameTextBox().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
@@ -318,6 +319,7 @@ namespace BillzyAutomationTestSuite.Scripts
 
                 WebDriver.Manage().Window.Maximize();
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/home");
+                SeleniumSetMethods.WaitOnPage(secdelay4);
                 LoginPage loginPage = new LoginPage(WebDriver);
                 loginPage.UserNameTextBox().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
@@ -499,6 +501,7 @@ namespace BillzyAutomationTestSuite.Scripts
 
                 WebDriver.Manage().Window.Maximize();
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/home");
+                SeleniumSetMethods.WaitOnPage(secdelay4);
                 LoginPage loginPage = new LoginPage(WebDriver);
                 loginPage.UserNameTextBox().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
@@ -615,6 +618,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 //User with payway account and with  cash and  payway permissions
                 WebDriver.Manage().Window.Maximize();
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/home");
+                SeleniumSetMethods.WaitOnPage(secdelay4);
                 LoginPage loginPage = new LoginPage(WebDriver);
                 loginPage.UserNameTextBox().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);

@@ -260,14 +260,15 @@ namespace BillzyAutomationTestSuite.Scripts
                 string invstat = Bobopg.InvoiceStatus().Text;
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Assert.IsTrue(invstat.Contains("DELETED"));
-
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 //HomePg.SignOutBTN().Click();
+
+            }
+            finally
+            {
+               
             }
         }
         [Test]
@@ -416,15 +417,16 @@ namespace BillzyAutomationTestSuite.Scripts
                 string who = SIVPG1.WhoDeletedInfo().Text;
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Assert.IsTrue(invstatus.Contains("DELETED") && date.Contains("Date Deleted") && date.Contains(dtString5) && who.Contains("You deleted this invoice."));
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
+                SeleniumSetMethods.WaitOnPage(secdelay4);
+                HomePg.SignOutBTN().Click();
 
 
             }
             finally
             {
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
-                SeleniumSetMethods.WaitOnPage(secdelay4);
-                HomePg.SignOutBTN().Click();
+                
             }
         }
         [Test]
@@ -577,16 +579,17 @@ namespace BillzyAutomationTestSuite.Scripts
                 String deletedmsg = SendPg.HistDelete().Text;
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Assert.IsTrue(deletedmsg.Contains("Deleted"));
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
+                SeleniumSetMethods.WaitOnPage(secdelay4);
+                HomePg.SignOutBTN().Click();
 
 
 
             }
             finally
             {
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
-                SeleniumSetMethods.WaitOnPage(secdelay4);
-                HomePg.SignOutBTN().Click();
+               
             }
         }
         [Test]
@@ -742,14 +745,15 @@ namespace BillzyAutomationTestSuite.Scripts
                 bool deleteoption2 = Recpg.DeleteOption().Displayed;
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Assert.IsTrue(deleteoption2 == false);
-
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+
+            }
+            finally
+            {
+                
             }
         }
         [Test]
@@ -995,17 +999,17 @@ namespace BillzyAutomationTestSuite.Scripts
                 string who1 = SIVPG1.WhoDeletedInfo().Text;
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Assert.IsTrue(invstatus1.Contains("DELETED") && date1.Contains("Date Deleted") && date1.Contains(dtString4) && who1.Contains("billzyBiz-108534 deleted this invoice."));
-                
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
+                SeleniumSetMethods.WaitOnPage(secdelay4);
+                HomePg.SignOutBTN().Click();
 
 
 
             }
             finally
             {
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
-                SeleniumSetMethods.WaitOnPage(secdelay4);
-                HomePg.SignOutBTN().Click();
+                
             }
         }
         [Test]
@@ -1146,13 +1150,14 @@ namespace BillzyAutomationTestSuite.Scripts
                 string who1 = SIVPG1.WhoDeletedInfo().Text;
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Assert.IsTrue(invstatus1.Contains("DELETED") && date1.Contains("Date Deleted") && date1.Contains(SentPgDueDate2) && who1.Contains("billzyBiz-98471 deleted this invoice."));
-            }
-            finally
-            {
+
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+            }
+            finally
+            {
             }
         }
         [Test]
@@ -1331,13 +1336,14 @@ namespace BillzyAutomationTestSuite.Scripts
                 string who1 = SIVPG1.WhoDeletedInfo().Text;
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Assert.IsTrue(invstatus1.Contains("DELETED") && date1.Contains("Date Deleted") && date1.Contains(dtString4) && who1.Contains("madcowbillergst+DeleteInvoice01 deleted this invoice."));
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+            }
+            finally
+            {
+               
             }
         }
         [Test]
@@ -1552,15 +1558,15 @@ namespace BillzyAutomationTestSuite.Scripts
 
 
                 SeleniumSetMethods.WaitOnPage(secdelay2);
-
-
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+
+            }
+            finally
+            {
+               
             }
         }
         [Test]
@@ -1814,15 +1820,15 @@ namespace BillzyAutomationTestSuite.Scripts
                 string who = SIVPG1.WhoDeletedInfo().Text;
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Assert.IsTrue(invstatus.Contains("DELETED") && date.Contains("Date Deleted") && date.Contains(dtString5) && who.Contains("madcowpayergst+DeleteInvoice01 deleted this invoice."));
-
-
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+
+            }
+            finally
+            {
+                
             }
         }
         [Test]
@@ -2077,14 +2083,14 @@ namespace BillzyAutomationTestSuite.Scripts
                 string who = SIVPG1.WhoDeletedInfo().Text;
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Assert.IsTrue(invstatus.Contains("DELETED") && date.Contains("Date Deleted") && date.Contains(dtString5) && who.Contains("madcowpayergst+DeleteInvoice01 deleted this invoice."));
-
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+            }
+            finally
+            {
+               
             }
         }
         [Test]
@@ -2471,17 +2477,17 @@ namespace BillzyAutomationTestSuite.Scripts
 
 
                 SeleniumSetMethods.WaitOnPage(secdelay2);
-
-                
-                
-
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+
+
+
+            }
+            finally
+            {
+               
             }
         }
         [Test]
@@ -2699,13 +2705,14 @@ namespace BillzyAutomationTestSuite.Scripts
                 string who = SIVPG1.WhoDeletedInfo().Text;
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Assert.IsTrue(invstatus.Contains("DELETED") && date.Contains("Date Deleted") && date.Contains(dtString5) && who.Contains("billzyBiz-458320 deleted this invoice."));
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+            }
+            finally
+            {
+                
             }
         }
         [Test]
@@ -2915,16 +2922,17 @@ namespace BillzyAutomationTestSuite.Scripts
 
 
                 SeleniumSetMethods.WaitOnPage(secdelay2);
-
-
-               
-            }
-            finally
-            {
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+
+
+
+            }
+            finally
+            {
+               
             }
         }
        

@@ -683,7 +683,7 @@ namespace BillzyAutomationTestSuite.Scripts
             RecPg.ReceivedHistoryBTN().Click();
             SeleniumSetMethods.WaitOnPage(secdelay3);
             RecPg.SearchInvoiceReceived().SendKeys("INV@" + randnumber2);
-            SeleniumSetMethods.WaitOnPage(secdelay3);
+            SeleniumSetMethods.WaitOnPage(secdelay7);
             RecPg.ActionsMenu().Click();
             SeleniumSetMethods.WaitOnPage(secdelay2);
             bool PDFInvoice = RecPg.PDFInvoice().Displayed;
@@ -815,7 +815,7 @@ namespace BillzyAutomationTestSuite.Scripts
             bool Cashpanel = SIVPG1.BillzyCashPanel().Displayed;
             bool HTMLLinkenabled = SIVPG1.HTMLLink().Displayed;
             string verifiedmsg = SIVPG1.VerifiedTextMsg().Text;
-            SeleniumSetMethods.WaitOnPage(secdelay2);
+            SeleniumSetMethods.WaitOnPage(secdelay5);
             Assert.IsTrue(InvStatus.Contains("UNPAID") && cashbuttonenabled == false && Cashpanel == false && HTMLLinkenabled == false && verifiedmsg.Contains("You verified this invoice on 6th August 2019 at 12:44 pm"));
             SIVPG1.ReturnBTN().Click();
             SeleniumSetMethods.WaitOnPage(secdelay2);
@@ -957,7 +957,7 @@ namespace BillzyAutomationTestSuite.Scripts
             bool HTMLLinkenabled = SIVPG1.HTMLLink().Displayed;
             string verifiedmsg = SIVPG1.VerifiedTextMsg().Text;
             string offerearlypaymentstatus = SIVPG1.OfferEarlyPaymentModalBTN().Text;
-            SeleniumSetMethods.WaitOnPage(secdelay2);
+            SeleniumSetMethods.WaitOnPage(secdelay5);
             Assert.IsTrue(offerearlypaymentstatus.Contains("OFFER EARLY PAYMENT") && InvStatus.Contains("UNPAID") && cashbuttonenabled == false && Cashpanel == false && HTMLLinkenabled == false && verifiedmsg.Contains("You verified this invoice on 6th August 2019 at 12:40 pm"));
             SIVPG1.ReturnBTN().Click();
             SeleniumSetMethods.WaitOnPage(secdelay2);
@@ -1639,8 +1639,8 @@ namespace BillzyAutomationTestSuite.Scripts
                 Bobopg.Surcharge().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Bobopg.RequestCash().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                Bobopg.PdfUpload().SendKeys(@"C:\Users\BillzyAdmin\OneDrive - Billzy\BillzyTestSuite\BillzyAutomationTestSuite\Invoice.pdf");
+                SeleniumSetMethods.WaitOnPage(secdelay4);
+                Bobopg.PdfUpload().SendKeys(@"C:\Users\Selenium\Desktop\SeleniumRegressionSuite_Bamboo\bin\Debug\netcoreapp3.1\Invoice.pdf");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Bobopg.Issue().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay10);
@@ -2792,7 +2792,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 SendPg.SearchInvoiceSent().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 SendPg.SearchInvoiceSent().Clear();
-                SeleniumSetMethods.WaitOnPage(secdelay2);
+                SeleniumSetMethods.WaitOnPage(secdelay7);
                 SendPg.SearchInvoiceSent().SendKeys("Scen3INVCASHREQMAP@" + randnumber2);
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 String CashReqTxt2 = SendPg.SearchedInvoiceCashStatus().Text;

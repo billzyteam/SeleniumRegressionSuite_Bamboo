@@ -26,6 +26,7 @@ namespace BillzyAutomationTestSuite.Scripts
             {
                 WebDriver.Manage().Window.Maximize();
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/home");
+                SeleniumSetMethods.WaitOnPage(secdelay4);
                 LoginPage loginPage = new LoginPage(WebDriver);
                 SendPage SendPg = new SendPage(WebDriver);
                 ReceivedPage Recpg = new ReceivedPage(WebDriver);
