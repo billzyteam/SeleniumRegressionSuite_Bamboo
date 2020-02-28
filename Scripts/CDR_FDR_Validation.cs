@@ -36,7 +36,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 string ilinkuname = "nraju";
                 string awspassword = "nonprod2019!";
                 string bamboopassword = "bamboo2019!";
-                string ilinkpassword = "ilink2020!";
+                string ilinkpassword = "ilinkfeb2020!";
 
 
                 string connstring10 = "SERVER=ua1499yt8dheg18.coyhkhf2vwwc.ap-southeast-2.rds.amazonaws.com;DATABASE=billzy;USERNAME=AutoTest;PASSWORD=MEtZA9e1SJvMm0d4ukLk;";
@@ -116,7 +116,7 @@ namespace BillzyAutomationTestSuite.Scripts
                  string randnumber2 = "1869675348";
                  */
 
-                //string randnumber2 = "1869675348";
+                
 
                 DateTime duedate1 = DateTime.Today;
                 string SentPgDueDate = duedate1.ToString("dd MMM yyyy");
@@ -1752,6 +1752,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 string invoicenumber51 = ffinvnumber12.Substring(ffinvnumber12.IndexOf("Invoice ")).Replace("Invoice ", "");
                 FDRInvList(invoicenumber51, "051DEALINTSURMAPBOBO@cdrfdr" + randnumber2, "FDRInvoiceslist2.csv");
                 InvList("invoicenumber51", invoicenumber51, "stringlist.txt");
+                SeleniumSetMethods.WaitOnPage(4);
                 HomePg.SignOutBTN().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 loginPg.UserNameTextBox().Click();
@@ -1847,15 +1848,14 @@ namespace BillzyAutomationTestSuite.Scripts
                     SeleniumSetMethods.WaitOnPage(3);
                     HomePg.Cashratesubmit().Click();
                     SeleniumSetMethods.WaitOnPage(5);
-                    IAlert alert3 = WebDriver.SwitchTo().Alert();
+                    IAlert alert4 = WebDriver.SwitchTo().Alert();
                     SeleniumSetMethods.WaitOnPage(5);
-                    alert3.Accept();
+                    alert4.Accept();
                     SeleniumSetMethods.WaitOnPage(2);
                 }
 
                 HomePg.FCLogout().Click();
                 SeleniumSetMethods.WaitOnPage(4);
-
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/home");
                 SeleniumSetMethods.WaitOnPage(4);
                 
@@ -1965,7 +1965,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 gmailpg.Password().SendKeys("Cognito1");
                 SeleniumSetMethods.WaitOnPage(2);
                 gmailpg.PasswordNext().Click();
-                SeleniumSetMethods.WaitOnPage(7);
+                SeleniumSetMethods.WaitOnPage(10);
 
                 var invextpayset1 = new List<string> { "19EXTSURCASHREQCC", "027EXTSURCASHDECCC", "021EXTSURCASHAPPCC" };
                 for (int i = invextpayset1.Count - 1; i >= 0; i--)
@@ -1982,54 +1982,6 @@ namespace BillzyAutomationTestSuite.Scripts
                     SeleniumSetMethods.WaitOnPage(5);
                     new Actions(WebDriver).SendKeys(OpenQA.Selenium.Keys.ArrowDown).Perform();
                     SeleniumSetMethods.WaitOnPage(2);
-                    new Actions(WebDriver).SendKeys(OpenQA.Selenium.Keys.Enter).Perform();
-                    SeleniumSetMethods.WaitOnPage(2);
-                    SeleniumSetMethods.WaitOnPage(2);
-                    var tabs = WebDriver.WindowHandles;
-                    gmailpg.Verify().Click();
-                    SeleniumSetMethods.WaitOnPage(7);
-                    WebDriver.SwitchTo().Window(WebDriver.WindowHandles.Last());
-                    SeleniumSetMethods.WaitOnPage(2);
-                    SeleniumSetMethods.WaitOnPage(2);
-                    gmailpg.CardName().SendKeys("Valid");
-                    SeleniumSetMethods.WaitOnPage(1);
-                    gmailpg.CardNumber().SendKeys("4242424242424242");
-                    SeleniumSetMethods.WaitOnPage(1);
-                    gmailpg.Expmon().SendKeys("12");
-                    SeleniumSetMethods.WaitOnPage(1);
-                    gmailpg.ExpYY().SendKeys("25");
-                    SeleniumSetMethods.WaitOnPage(1);
-                    gmailpg.CVC().SendKeys("089");
-                    SeleniumSetMethods.WaitOnPage(1);
-                    gmailpg.PAY().Click();
-                    SeleniumSetMethods.WaitOnPage(7);
-                    string successmsg = gmailpg.Successmsg().Text;
-                    SeleniumSetMethods.WaitOnPage(2);
-                    Assert.IsTrue(successmsg.Contains("Successful payment"));
-                    SeleniumSetMethods.WaitOnPage(2);
-                    WebDriver.Close();
-                    WebDriver.SwitchTo().Window(WebDriver.WindowHandles.Last());
-                    SeleniumSetMethods.WaitOnPage(2);
-                    gmailpg.Search().Click();
-                    SeleniumSetMethods.WaitOnPage(2);
-                    gmailpg.Search().Clear();
-                    SeleniumSetMethods.WaitOnPage(2);
-                }
-                var invextpayset11 = new List<string> { "021EXTSURCASHAPPCC" };
-                for (int i = invextpayset11.Count - 1; i >= 0; i--)
-                {
-
-                    gmailpg.Search().Click();
-                    SeleniumSetMethods.WaitOnPage(2);
-                    gmailpg.Search().SendKeys(invextpayset1[i] + "@cdrfdr" + randnumber2);
-                    SeleniumSetMethods.WaitOnPage(2);
-                    SeleniumSetMethods.WaitOnPage(2);
-                    gmailpg.SearchOption().Click();
-                    SeleniumSetMethods.WaitOnPage(2);
-                    gmailpg.SearchButton().Click();
-                    SeleniumSetMethods.WaitOnPage(5);
-                    new Actions(WebDriver).SendKeys(OpenQA.Selenium.Keys.ArrowDown).Perform();
-                    SeleniumSetMethods.WaitOnPage(2);
                     new Actions(WebDriver).SendKeys(OpenQA.Selenium.Keys.ArrowDown).Perform();
                     SeleniumSetMethods.WaitOnPage(2);
                     new Actions(WebDriver).SendKeys(OpenQA.Selenium.Keys.Enter).Perform();
@@ -2065,6 +2017,7 @@ namespace BillzyAutomationTestSuite.Scripts
                     gmailpg.Search().Clear();
                     SeleniumSetMethods.WaitOnPage(2);
                 }
+                
                 gmailpg.profile().Click();
                 SeleniumSetMethods.WaitOnPage(4);
                 gmailpg.signout().Click();
@@ -2664,6 +2617,11 @@ namespace BillzyAutomationTestSuite.Scripts
                 loginPg.CDRBlockInvField().SendKeys(invoicenumber12);
                 SeleniumSetMethods.WaitOnPage(2);
                 loginPg.CDRBlockCash().Click();
+                SeleniumSetMethods.WaitOnPage(3);
+                IAlert alert3 = WebDriver.SwitchTo().Alert();
+                alert3.Accept();
+                SeleniumSetMethods.WaitOnPage(3);
+                alert3.Accept();
                 SeleniumSetMethods.WaitOnPage(3);
                 HomePg.FCLogout().Click();
                 SeleniumSetMethods.WaitOnPage(3);
@@ -3507,6 +3465,8 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(derpstext.Contains(SentPgDueDate111 + "034-001519897"));
                 Assert.IsTrue(derpstext.Contains("7999-999"));
                 SeleniumSetMethods.WaitOnPage(3);
+                ilinkpg.ilinkSignout().Click();
+                SeleniumSetMethods.WaitOnPage(5);
                 WebDriver.Navigate().GoToUrl("http://bamboo.controlplane.billzy.com:443/allPlans.action");
 
                 // " DEEDS & BZYCAPITALDIST"
@@ -3631,6 +3591,8 @@ namespace BillzyAutomationTestSuite.Scripts
                 string none = ilinkpg.NoFile().Text;
                 SeleniumSetMethods.WaitOnPage(3);
                 Assert.IsTrue(none.Contains("None"));
+                SeleniumSetMethods.WaitOnPage(5);
+                ilinkpg.ilinkSignout().Click();
                 SeleniumSetMethods.WaitOnPage(5);
 
                 //•	Step 15 : Verify the latest entry status as COMPLETED in Funds distribution table and the dist type as CASH_DIST and Cash history status as Funded for the Step 14 invoices
@@ -4403,7 +4365,8 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(deedstext1.Contains("043NORINT"));
                 Assert.IsTrue(deedstext1.Contains("048DEALIN"));
                 Assert.IsTrue(deedstext1.Contains("049DEALINT"));
-
+                ilinkpg.ilinkSignout().Click();
+                SeleniumSetMethods.WaitOnPage(5);
 
                 WebDriver.Navigate().GoToUrl("http://bamboo.controlplane.billzy.com:443/allPlans.action");
 
@@ -4528,10 +4491,11 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(none1.Contains("None"));
                 SeleniumSetMethods.WaitOnPage(3);
                 SeleniumSetMethods.WaitOnPage(3);
-
+                ilinkpg.ilinkSignout().Click();
+                SeleniumSetMethods.WaitOnPage(5);
                 //•	Step 19 : Verify the bank paid invoice status for successful from processing 002, 004, 006, 008, 010, 012, 042, 043, 048, 049
                 // Verify the invoice status in databse for SUCCESSFUL
-                
+
                 command.CommandText = "select invoice_number, status from billzy.invoice where reference in ('" + invoicenumber49 + "');";
                 try
                 {
@@ -4562,8 +4526,8 @@ namespace BillzyAutomationTestSuite.Scripts
                 string dtString121 = duedate11.ToString("yyyy-MM-dd HH:mm:ss");
 
                 SeleniumSetMethods.WaitOnPage(2);
-                //command.CommandText = "select id from billzy.invoice where invoice_number in ('" + invoicenumber1 + "','" + invoicenumber3 + "','" + invoicenumber7 + "','" + invoicenumber5 + "','" + invoicenumber11 + "','" + invoicenumber19 + "','" + invoicenumber21 + "','" + invoicenumber23 + "','" + invoicenumber25 + "','" + invoicenumber27 + "','" + invoicenumber40 + "','" + invoicenumber41 + "','" + invoicenumber44 + "','" + invoicenumber45 + "','" + invoicenumber46 + "','" + invoicenumber47 + "'); ";
-                command.CommandText = "select id from billzy.invoice where invoice_number in ('" + invoicenumber1 + "','" + invoicenumber3 + "','" + invoicenumber7 + "'); ";
+                command.CommandText = "select id from billzy.invoice where invoice_number in ('" + invoicenumber1 + "','" + invoicenumber3 + "','" + invoicenumber7 + "','" + invoicenumber5 + "','" + invoicenumber11 + "','" + invoicenumber19 + "','" + invoicenumber21 + "','" + invoicenumber23 + "','" + invoicenumber25 + "','" + invoicenumber27 + "','" + invoicenumber40 + "','" + invoicenumber41 + "','" + invoicenumber44 + "','" + invoicenumber45 + "','" + invoicenumber46 + "','" + invoicenumber47 + "'); ";
+               // command.CommandText = "select id from billzy.invoice where invoice_number in ('" + invoicenumber1 + "','" + invoicenumber3 + "','" + invoicenumber7 + "'); ";
                 try
                 {
                     conn.Open();
@@ -4583,7 +4547,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 conn.Close();
 
 
-                //Bakdate all the invoice paid timestamp
+                //Bakdate all the invoice paid timestamp in receivable table
                 command.CommandText = "UPDATE `billzy`.`receivable` SET `paid_timestamp` = '" + dtString12 + "' where invoice_id in ('" + numbers + "');";
                 try
                 {
@@ -4621,7 +4585,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(receivabledate1.Contains(dtString120));
                 SeleniumSetMethods.WaitOnPage(5);
 
-                //Bakdate all the invoice paid timestamp
+                //Bakdate all the invoice paid timestamp in invoice amount submitted table
                 command.CommandText = "UPDATE `billzy`.`invoice_amount_submitted` SET `amount_submitted_timestamp` = '" + dtString12 + "', `amount_success_timestamp` = '" + dtString12 + "' WHERE invoice_id in ('" + numbers + "');";
                 try
                 {
@@ -4877,7 +4841,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(5);
 
 
-
+                //•	Step 24 : Verify the late fee amount fr the invoices that backdated its due date
                 SeleniumSetMethods.WaitOnPage(5);
                 string text00 = File.ReadAllText(@"C:\Users\BillzyAdmin\OneDrive-Billzy\BillzyTestSuite\BillzyAutomationTestSuite\bin\Debug\netcoreapp3.0\Files" + folderdate + "\\fdr-report.csv");
                 // string text = File.ReadAllText(@"C:\Users\BillzyAdmin\Desktop\Imp\fdr-report.csv");
@@ -4936,7 +4900,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(fdrinv41 == true && fdrinv42 == true && fdrinv43 == true && fdrinv44 == true && fdrinv45 == true && fdrinv46 == true && fdrinv47 == true && fdrinv48 == true && fdrinv49 == true && fdrinv50 == false && fdrinv51 == false && fdrinv52 == false);
                 //FC Blocks invoices from the batch file "012INTNOSURCASHPVERDD@"
                 SeleniumSetMethods.WaitOnPage(2);
-
+                //•	Step 25 : Block 1 invoice [001]
                 loginPg.FDRBlockInv().Click();
                 SeleniumSetMethods.WaitOnPage(2);
                 loginPg.FDRBlockInv().SendKeys("invoicenumber1");
@@ -4952,6 +4916,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(3);
                 SeleniumSetMethods.WaitOnPage(2);
 
+                
                 // Verify the FDR status in databse for UNSTARTED
                 command.CommandText = "select funds_distribution_status from billzy.funds_distribution order by id desc limit 1;";
                 try
@@ -4972,6 +4937,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 conn.Close();
                 SeleniumSetMethods.WaitOnPage(2);
                 Assert.IsTrue(funds_distribution_status1 == "UNSTARTED");
+                //•	Step 26 : Execute the Transfer Request against FUNDS
 
                 WebDriver.Navigate().GoToUrl("http://bamboo.controlplane.billzy.com:443/allPlans.action");
 
@@ -5026,7 +4992,9 @@ namespace BillzyAutomationTestSuite.Scripts
                 Bampg.Bamboologoutbutton().Click();
                 SeleniumSetMethods.WaitOnPage(3);
 
-                // Verify the FDR status in databse for UNSTARTED
+                //•	Step 27 :  Verify the latest entry status as PENDING in Funds distribution table and the dist type as FUNDS_DIST
+
+                // Verify the FDR status in databse for PENDING
                 command.CommandText = "select funds_distribution_status from billzy.funds_distribution order by id desc limit 1;";
                 try
                 {
@@ -5046,6 +5014,49 @@ namespace BillzyAutomationTestSuite.Scripts
                 conn.Close();
                 SeleniumSetMethods.WaitOnPage(2);
                 Assert.IsTrue(funds_distribution_status == "PENDING");
+
+                //•	Step 28 : Verify the Blocked invoice receivable table status as UNSTARTED. 
+                command.CommandText = "SELECT id FROM billzy.invoice where invoice_number in ('"+invoicenumber1+"');";
+                try
+                {
+                    conn.Open();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                MySqlDataReader readerfdr212 = command.ExecuteReader();
+                string invoiceid;
+                while (readerfdr212.Read())
+                {
+                    Console.WriteLine(readerfdr212["id"].ToString());
+                }
+                invoiceid = readerfdr212["id"].ToString();
+                conn.Close();
+                SeleniumSetMethods.WaitOnPage(2);
+                
+
+                command.CommandText = "SELECT receivable_fund_distribution_status FROM billzy.receivable where invoice_id = '"+ invoiceid + "';";
+                try
+                {
+                    conn.Open();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                MySqlDataReader readerfdr222 = command.ExecuteReader();
+                string receivable_fund_distribution_status;
+                while (readerfdr222.Read())
+                {
+                    Console.WriteLine(readerfdr222["receivable_fund_distribution_status"].ToString());
+                }
+                receivable_fund_distribution_status = readerfdr222["receivable_fund_distribution_status"].ToString();
+                conn.Close();
+                SeleniumSetMethods.WaitOnPage(2);
+                Assert.IsTrue(receivable_fund_distribution_status == "UNSTARTED");
+                SeleniumSetMethods.WaitOnPage(2);
+                //•	Step 29 :  Execute the trust distribution
 
                 WebDriver.Navigate().GoToUrl("http://bamboo.controlplane.billzy.com:443/allPlans.action");
 
@@ -5224,6 +5235,8 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(derpstext11.Contains("7999-999"));
                 SeleniumSetMethods.WaitOnPage(3);
                 SeleniumSetMethods.WaitOnPage(3);
+                ilinkpg.ilinkSignout().Click();
+                SeleniumSetMethods.WaitOnPage(5);
                 WebDriver.Navigate().GoToUrl("http://bamboo.controlplane.billzy.com:443/allPlans.action");
 
                 // DEEDS & BZYTRUSTDIST
@@ -5350,6 +5363,9 @@ namespace BillzyAutomationTestSuite.Scripts
                 Assert.IsTrue(none2.Contains("None"));
                 SeleniumSetMethods.WaitOnPage(3);
                 SeleniumSetMethods.WaitOnPage(3);
+                ilinkpg.ilinkSignout().Click();
+                SeleniumSetMethods.WaitOnPage(5);
+                //•	Step 30 : Verify the latest entry status as COMPLETED in Funds distribution table and the dist type as FUNDS_DIST
 
                 // Verify the FDR status in databse for COMPLETE
                 command.CommandText = "select funds_distribution_status from billzy.funds_distribution order by id desc limit 1;";
@@ -5371,6 +5387,97 @@ namespace BillzyAutomationTestSuite.Scripts
                 conn.Close();
                 SeleniumSetMethods.WaitOnPage(2);
                 Assert.IsTrue(funds_distribution_status == "COMPLETE");
+                SeleniumSetMethods.WaitOnPage(secdelay4);
+                WebDriver.Navigate().GoToUrl("http://bamboo.controlplane.billzy.com:443/allPlans.action");
+                SeleniumSetMethods.WaitOnPage(secdelay4);
+                Bampg.Login().Click();
+                SeleniumSetMethods.WaitOnPage(secdelay4);
+                Bampg.Username().SendKeys(bamboouname);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                Bampg.Password().SendKeys(bamboopassword);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                Bampg.LoginButton().Click();
+                SeleniumSetMethods.WaitOnPage(secdelay4);
+
+                //•	Step 31 : Execute Member statement for the biller
+                // Mmeber Statement Generation
+
+                SeleniumSetMethods.WaitOnPage(secdelay4);
+                Bampg.DeployMenu().Click();
+                SeleniumSetMethods.WaitOnPage(secdelay4);
+                Bampg.AllDeploymentProjects().Click();
+                SeleniumSetMethods.WaitOnPage(secdelay5);
+                Bampg.BillzyMemberStatement().Click();
+                SeleniumSetMethods.WaitOnPage(secdelay5);
+                Bampg.BMSUATEdit().Click();
+                SeleniumSetMethods.WaitOnPage(secdelay5);
+                Bampg.BMSVariable().Click();
+                SeleniumSetMethods.WaitOnPage(secdelay5);
+                Bampg.BMSBID().Click();
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                Bampg.BMSBIDClear().Clear();
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                Bampg.BMSBIDClear().SendKeys("48581");
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                Bampg.BMSBIDSave().Click();
+                SeleniumSetMethods.WaitOnPage(secdelay4);
+                Bampg.BMSMonth().Click();
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                Bampg.BMSMonthClear().Clear();
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                Bampg.BMSMonthClear().SendKeys("02");
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                Bampg.BMSMonthsave().Click();
+                SeleniumSetMethods.WaitOnPage(secdelay4);
+                Bampg.BMSYear().Click();
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                Bampg.BMSYearClear().Clear();
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                Bampg.BMSYearClear().SendKeys("2020");
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                Bampg.BMSYearsave().Click();
+                SeleniumSetMethods.WaitOnPage(secdelay4);
+                Bampg.BacktoDeployment().Click();
+                SeleniumSetMethods.WaitOnPage(secdelay5);
+                Bampg.BMSExecuteDeployment().Click();
+                SeleniumSetMethods.WaitOnPage(secdelay5);
+                Bampg.StartDeployment().Click();
+                SeleniumSetMethods.WaitOnPage(60);
+                IWebElement bodyTag212 = WebDriver.FindElement(By.TagName("body"));
+                bool status212 = bodyTag212.Text.Contains("SUCCESS");
+                SeleniumSetMethods.WaitOnPage(secdelay3);
+                if (status2 == false)
+                {
+                    SeleniumSetMethods.WaitOnPage(60);
+                }
+
+
+                //Login to webapp and check for member statement
+
+                WebDriver.Navigate().GoToUrl("https://demo.billzy.com/home");
+                LoginPage loginPage = new LoginPage(WebDriver);
+                loginPage.UserNameTextBox().Click();
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                loginPage.UserNameTextBox().Clear();
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                loginPage.UserNameTextBox().SendKeys("madcowtesting10+cdrfdrbiller@gmail.com");
+                loginPage.PasswordTextBox().Click();
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                loginPage.PasswordTextBox().SendKeys("Cognito1");
+                loginPage.LoginButton().Click();
+                SeleniumSetMethods.WaitOnPage(secdelay7);
+                HomePage homepg = new HomePage(WebDriver);
+                homepg.Profile().Click();
+                SeleniumSetMethods.WaitOnPage(secdelay3);
+                homepg.MemberStatement().Click();
+                SeleniumSetMethods.WaitOnPage(secdelay3);
+                IWebElement bodyTag = WebDriver.FindElement(By.TagName("body"));
+                bool MSstatus = bodyTag.Text.Contains("February 2020 - Statement");
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                Assert.IsTrue(MSstatus == true);
+                SeleniumSetMethods.WaitOnPage(secdelay3);
+                homepg.SignOutBTN().Click();
             }
             finally
             {

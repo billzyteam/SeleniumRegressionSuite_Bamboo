@@ -681,7 +681,7 @@ namespace BillzyAutomationTestSuite.Scripts
             HomePg.ReceivedBTN().Click();
             SeleniumSetMethods.WaitOnPage(secdelay2);
             RecPg.ReceivedHistoryBTN().Click();
-            SeleniumSetMethods.WaitOnPage(secdelay3);
+            SeleniumSetMethods.WaitOnPage(secdelay7);
             RecPg.SearchInvoiceReceived().SendKeys("INV@" + randnumber2);
             SeleniumSetMethods.WaitOnPage(secdelay7);
             RecPg.ActionsMenu().Click();
@@ -816,7 +816,7 @@ namespace BillzyAutomationTestSuite.Scripts
             bool HTMLLinkenabled = SIVPG1.HTMLLink().Displayed;
             string verifiedmsg = SIVPG1.VerifiedTextMsg().Text;
             SeleniumSetMethods.WaitOnPage(secdelay5);
-            Assert.IsTrue(InvStatus.Contains("UNPAID") && cashbuttonenabled == false && Cashpanel == false && HTMLLinkenabled == false && verifiedmsg.Contains("You verified this invoice on 6th August 2019 at 12:44 pm"));
+            Assert.IsTrue(InvStatus.Contains("UNPAID") && cashbuttonenabled == false && Cashpanel == false && HTMLLinkenabled == false && verifiedmsg.Contains("You verified this invoice on 6th August 2019 at 2:44 am"));
             SIVPG1.ReturnBTN().Click();
             SeleniumSetMethods.WaitOnPage(secdelay2);
             Recpg.ActionsMenu().Click();
@@ -958,7 +958,7 @@ namespace BillzyAutomationTestSuite.Scripts
             string verifiedmsg = SIVPG1.VerifiedTextMsg().Text;
             string offerearlypaymentstatus = SIVPG1.OfferEarlyPaymentModalBTN().Text;
             SeleniumSetMethods.WaitOnPage(secdelay5);
-            Assert.IsTrue(offerearlypaymentstatus.Contains("OFFER EARLY PAYMENT") && InvStatus.Contains("UNPAID") && cashbuttonenabled == false && Cashpanel == false && HTMLLinkenabled == false && verifiedmsg.Contains("You verified this invoice on 6th August 2019 at 12:40 pm"));
+            Assert.IsTrue(offerearlypaymentstatus.Contains("OFFER EARLY PAYMENT") && InvStatus.Contains("UNPAID") && cashbuttonenabled == false && Cashpanel == false && HTMLLinkenabled == false && verifiedmsg.Contains("You verified this invoice on 6th August 2019 at 2:40 am"));
             SIVPG1.ReturnBTN().Click();
             SeleniumSetMethods.WaitOnPage(secdelay2);
             Recpg.ActionsMenu().Click();
@@ -1468,7 +1468,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 SendPg.SentOutstandingBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 SendPg.SearchInvoiceSent().SendKeys("INVCASHRAP@" + randnumber2);
-                SeleniumSetMethods.WaitOnPage(secdelay2);
+                SeleniumSetMethods.WaitOnPage(secdelay7);
                 bool CashReqIcon1 = SendPg.CashApprovedIcon().Displayed;
                 String CashReqTxt1 = SendPg.SearchedInvoiceCashStatus().Text;
                 Assert.IsTrue(CashReqIcon1 == true && CashReqTxt1.Contains("Cash approved"));
@@ -2036,7 +2036,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 gmailpg.Password().SendKeys("Cognito1");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 gmailpg.PasswordNext().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay5);
+                SeleniumSetMethods.WaitOnPage(secdelay10);
                 gmailpg.Search().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 gmailpg.Search().SendKeys("Scen1INVCASHREQEXTCARD@" + randnumber2);
@@ -2148,7 +2148,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 SendPg.SentHistoryBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay7);
                 SendPg.SearchInvoiceSent().SendKeys(invoicenumber1);
-                SeleniumSetMethods.WaitOnPage(secdelay5);
+                SeleniumSetMethods.WaitOnPage(secdelay7);
                 bool CashDec1 = SendPg.CashDeclinedIcon().Displayed;
                 String CashDecTxt1 = SendPg.SearchedInvoiceCashStatus().Text;
                 Assert.IsTrue(CashDec1 == true && CashDecTxt1.Contains("Cash declined"));
@@ -2480,7 +2480,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 gmailpg.Password().SendKeys("Cognito1");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 gmailpg.PasswordNext().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay7);
+                SeleniumSetMethods.WaitOnPage(secdelay10);
                 gmailpg.Search().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 gmailpg.Search().SendKeys("Scen2INVCASHREQEXTCARD@" + randnumber2);
@@ -2529,7 +2529,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 gmailpg.PAY().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay7);
                 string successmsg = gmailpg.Successmsg().Text;
-                SeleniumSetMethods.WaitOnPage(secdelay2);
+                SeleniumSetMethods.WaitOnPage(secdelay5);
                 Assert.IsTrue(successmsg.Contains("Successful payment"));
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 WebDriver.Close();
@@ -2938,7 +2938,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 gmailpg.Password().SendKeys("Cognito1");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 gmailpg.PasswordNext().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay5);
+                SeleniumSetMethods.WaitOnPage(secdelay10);
                 gmailpg.Search().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 gmailpg.Search().SendKeys("Scen3INVCASHREQEXTCARD@" + randnumber2);

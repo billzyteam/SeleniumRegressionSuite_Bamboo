@@ -579,7 +579,8 @@ namespace BillzyAutomationTestSuite.Scripts
                 Recpg.SearchInvoiceReceived().SendKeys("PEDCC");
                 SeleniumSetMethods.WaitOnPage(secdelay10);
                 Recpg.InvoiceNumclick().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay6);
+                SeleniumSetMethods.WaitOnPage(secdelay10);
+                
                 string billzyrefnumber = Recpg.BillzyRefResult().Text;
 
                 bool OfferExpiredIcon = Recpg.OfferExpiredIcon().Displayed;

@@ -214,7 +214,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay10);
                 ReceivedPage recpg = new ReceivedPage(WebDriver);
                 recpg.SearchInvoiceReceived().SendKeys(invoicenumber3);
-                SeleniumSetMethods.WaitOnPage(secdelay5);
+                SeleniumSetMethods.WaitOnPage(secdelay10);
                 recpg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay3);
                 bool verifybtn2 = SIVPG1.PayerVerifyBTN().Displayed;
@@ -1002,7 +1002,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 
                 //Sent Tab Scroll Action Validation
                 HomePg.SentBTN().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay5);
+                SeleniumSetMethods.WaitOnPage(secdelay10);
                 sendpg.PDFSelection5().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 var PDFButtonBottom = WebDriver.FindElement(By.XPath("//div[@class = 'sent-details'] //div[contains(@class, 'pdf-download-area-bottom')] //button[@class = 'btn download-btn ladda-button']"));
@@ -1015,6 +1015,24 @@ namespace BillzyAutomationTestSuite.Scripts
                 ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFButtonBottom);
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 sendpg.PDFSelection129().Click();
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFButtonBottom);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFButtonBottom);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFButtonBottom);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFButtonBottom);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFButtonBottom);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFButtonBottom);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFButtonBottom);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFButtonBottom);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFButtonBottom);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
                 ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFButtonBottom);
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFButtonBottom);
@@ -1091,6 +1109,16 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFButtonBottom1);
                 SeleniumSetMethods.WaitOnPage(secdelay2);
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFButtonBottom1);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFButtonBottom1);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFButtonBottom1);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFButtonBottom1);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFButtonBottom1);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
                 string TotalHISTiv = sendpg.Invoiceloaded().Text;
                 string pdfHISTtext = sendpg.PdfButtonButton().Text;
                 SeleniumSetMethods.WaitOnPage(secdelay3);
@@ -1111,6 +1139,12 @@ namespace BillzyAutomationTestSuite.Scripts
                 ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFtopButoon);
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFtopButoon);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFtopButoon);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFtopButoon);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
                 ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFtopButoon);
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFtopButoon);
@@ -1167,6 +1201,12 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFrecButtonBottom);
                 SeleniumSetMethods.WaitOnPage(secdelay2);
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFrecButtonBottom);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFrecButtonBottom);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFrecButtonBottom);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
                 string Totalrecinv = recpg.Invoiceloaded().Text;
                 string pdftextrec = PDFrecButtonBottom.Text;
                 SeleniumSetMethods.WaitOnPage(secdelay3);
@@ -1183,6 +1223,14 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay3);
                 Assert.IsTrue(pdftextrec1.Contains("4 PDF's") && payamount.Contains("PAY $"));
                 IWebElement PDFtopButoonrec = WebDriver.FindElement(By.XPath("//*[@id=\"receivedUnpaid-download-btn\"]"));
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFtopButoonrec);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFtopButoonrec);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFtopButoonrec);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFtopButoonrec);
+                SeleniumSetMethods.WaitOnPage(secdelay2);
                 ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFtopButoonrec);
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 ((IJavaScriptExecutor)WebDriver).ExecuteScript("arguments[0].scrollIntoView(true);", PDFtopButoonrec);

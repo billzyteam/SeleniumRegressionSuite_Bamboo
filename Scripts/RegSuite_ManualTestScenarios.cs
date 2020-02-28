@@ -220,7 +220,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 gmailpg.Password().SendKeys("Cognito1");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 gmailpg.PasswordNext().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay5);
+                SeleniumSetMethods.WaitOnPage(secdelay8);
                 gmailpg.Search().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 gmailpg.Search().SendKeys("Invoice reference : INVINTMTCI@" + randnumber2);
@@ -670,7 +670,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 gmailpg.Password().SendKeys("Cognito1");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 gmailpg.PasswordNext().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay5);
+                SeleniumSetMethods.WaitOnPage(secdelay10);
                 gmailpg.Search().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 gmailpg.Search().SendKeys("INVEXTMTBOBO@" + randnumber2);
@@ -761,7 +761,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay5);
                 IWebElement bodyTag2 = WebDriver.FindElement(By.TagName("body"));
-                bool err23 = bodyTag2.Text.Contains("Unfortunately there was an internal system error. Please contact Billzy support");
+                bool err23 = bodyTag2.Text.Contains("Unfortunately there was an internal system error. Please try again in 2 minutes or contact Billzy support.");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Assert.IsTrue(err23 == true);
                 IssueInvoicePg.InvoiceReferenceCreate().Click();
@@ -799,7 +799,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay5);
                 IWebElement bodyTag3 = WebDriver.FindElement(By.TagName("body"));
-                bool err33 = bodyTag3.Text.Contains("Unfortunately there was an internal system error. Please contact Billzy support");
+                bool err33 = bodyTag3.Text.Contains("Unfortunately there was an internal system error. Please try again in 2 minutes or contact Billzy support.");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Assert.IsTrue(err33 == false);
                 SeleniumSetMethods.WaitOnPage(secdelay5);
@@ -1210,7 +1210,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 SIVPG1.AcceptOfferBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay3);
                 SIVPG1.AcceptTheOfferModalYesBTN().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay5);
+                SeleniumSetMethods.WaitOnPage(secdelay10);
                 SIVPG1.ReturnBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay3);
                 HomePg.SignOutBTN().Click();
@@ -1590,7 +1590,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay3);
 
                 SIVPG1.makeCounterOfferModalBTN().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay5);
+                SeleniumSetMethods.WaitOnPage(secdelay10);
                 SIVPG1.ReturnBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay3);
 
@@ -1695,7 +1695,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 gmailpg.Password().SendKeys("Cognito1");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 gmailpg.PasswordNext().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay5);
+                SeleniumSetMethods.WaitOnPage(secdelay10);
                 gmailpg.Search().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 gmailpg.Search().SendKeys("Invoice reference : INVMTWRDDEAL@" + randnumber2);

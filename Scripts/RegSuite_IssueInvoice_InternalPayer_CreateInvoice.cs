@@ -169,7 +169,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay5);
                 IWebElement bodyTag2 = WebDriver.FindElement(By.TagName("body"));
-                bool err23 = bodyTag2.Text.Contains("Unfortunately there was an internal system error. Please contact Billzy support");
+                bool err23 = bodyTag2.Text.Contains("Unfortunately there was an internal system error. Please try again in 2 minutes or contact Billzy support.");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Assert.IsTrue(err23 == true);
                 IssueInvoicePg.InvoiceReferenceCreate().Click();

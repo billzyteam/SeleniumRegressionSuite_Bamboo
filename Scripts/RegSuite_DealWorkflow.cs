@@ -228,7 +228,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 SIVPG1.AcceptOfferBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay3);
                 SIVPG1.AcceptTheOfferModalYesBTN().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay5);
+                SeleniumSetMethods.WaitOnPage(secdelay9);
                 SIVPG1.ReturnBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay3);
                 
@@ -265,7 +265,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 HomePg.ReceivedBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay5);
                 Recpg.SearchInvoiceReceived().SendKeys("INVDEAL@" + randnumber2);
-                SeleniumSetMethods.WaitOnPage(secdelay3);
+                SeleniumSetMethods.WaitOnPage(secdelay7);
                 bool OfferAccepteddIcon3 = Recpg.OfferAcceptedIcon().Displayed;
                 String OfferStatus3 = Recpg.OfferacceptedStatus().Text;
                 SeleniumSetMethods.WaitOnPage(secdelay1);

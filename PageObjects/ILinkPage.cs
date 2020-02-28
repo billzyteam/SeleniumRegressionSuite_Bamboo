@@ -70,5 +70,9 @@ namespace BillzyAutomationTestSuite.PageObjects
         {
             return webDriver.FindElement(By.XPath("//*[@id=\"content-inner\"]/div[2]/div[4]/div/ul/li"));
         }
+        public IWebElement ilinkSignout()
+        {
+            return webDriver.FindElement(By.XPath("//*[@id=\"navbarNav\"]/a"));
+        }
     }
 }

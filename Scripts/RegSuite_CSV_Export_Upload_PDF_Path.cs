@@ -310,7 +310,8 @@ namespace BillzyAutomationTestSuite.Scripts
                 string CSVLink = exportlink.Substring(exportlink.IndexOf("https://4impact-export-data-uat.s3.ap-southeast-2.amazonaws.com/")).Replace("https://4impact-export-data-uat.s3.ap-southeast-2.amazonaws.com/", "");
                 string csvfilename = CSVLink.Substring(0, CSVLink.LastIndexOf(".") + 1);
                 string text = File.ReadAllText(@"C:\Users\Selenium\Downloads\" + csvfilename + "csv");
-                Assert.IsTrue(text.Contains("Status,To,Invoice Number,Completed,Amount,Billzy Column\nPAID,External Payer,Upload_PDF_P-09,2018-10-18,900.00,Cash requested\nPAID,External Payer,Upload_PDF_P-10,2018-10-18,1000.00,\nPAID,billzyBiz-415339,Upload_PDF_P-06,2018-10-18,600.00,\nPAID,billzyBiz-415339,Upload_PDF_P-07,2018-10-18,690.00,Paid 1901 day(s) earlier\nPAID,billzyBiz-415339,Upload_PDF_P-08,2018-10-18,800.00,Cash requested"));
+                 SeleniumSetMethods.WaitOnPage(secdelay5);
+                Assert.IsTrue(text.Contains("Status,To,Invoice Number,Completed,Amount,Billzy Column\nPAID,External Payer,Upload_PDF_P-09,2018-10-17,900.00,Cash requested\nPAID,External Payer,Upload_PDF_P-10,2018-10-17,1000.00,\nPAID,billzyBiz-415339,Upload_PDF_P-06,2018-10-17,600.00,\nPAID,billzyBiz-415339,Upload_PDF_P-07,2018-10-17,690.00,Paid 1902 day(s) earlier\nPAID,billzyBiz-415339,Upload_PDF_P-08,2018-10-17,800.00,Cash requested"));
                 Assert.IsTrue(text.Contains("Upload_PDF_P-09") && text.Contains("Upload_PDF_P-06") && text.Contains("Upload_PDF_P-07") && text.Contains("Upload_PDF_P-08") && text.Contains("Upload_PDF_P-10"));
 
                 //testInfo = 'Export Modal for Sent - History - MYOB CSV'
@@ -419,7 +420,9 @@ namespace BillzyAutomationTestSuite.Scripts
                 string CSVLink3 = exportlink3.Substring(exportlink3.IndexOf("https://4impact-export-data-uat.s3.ap-southeast-2.amazonaws.com/")).Replace("https://4impact-export-data-uat.s3.ap-southeast-2.amazonaws.com/", "");
                 string csvfilename3 = CSVLink3.Substring(0, CSVLink3.LastIndexOf(".") + 1);
                 string CSV2 = File.ReadAllText(@"C:\Users\Selenium\Downloads\" + csvfilename3 + "csv");
-                Assert.IsTrue(CSV2.Contains("Status,Verified,From,Invoice Number,Completed,Amount,Billzy Column\nPAID,NOT VERIFIED,billzyBiz-380887,Upload_PDF_P-06,2018-10-18,600.00,\nPAID,NOT VERIFIED,billzyBiz-380887,Upload_PDF_P-08,2018-10-18,800.00,\nPAID,NOT VERIFIED,billzyBiz-380887,Upload_PDF_P-07,2018-10-18,690.00,You saved $10.00"));
+                SeleniumSetMethods.WaitOnPage(secdelay2);
+               Assert.IsTrue(CSV2.Contains("Status,Verified,From,Invoice Number,Completed,Amount,Billzy Column\nPAID,NOT VERIFIED,billzyBiz-380887,Upload_PDF_P-06,2018-10-17,600.00,\nPAID,NOT VERIFIED,billzyBiz-380887,Upload_PDF_P-08,2018-10-17,800.00,\nPAID,NOT VERIFIED,billzyBiz-380887,Upload_PDF_P-07,2018-10-17,690.00,You saved $10.00"));
+                //Assert.IsTrue(CSV2.Contains("Status,Verified,From,Invoice Number,Completed,Amount,Billzy Column\nPAID,NOT VERIFIED,billzyBiz-380887,Upload_PDF_P-06,2018-10-18,600.00,\nPAID,NOT VERIFIED,billzyBiz-380887,Upload_PDF_P-08,2018-10-18,800.00,\nPAID,NOT VERIFIED,billzyBiz-380887,Upload_PDF_P-07,2018-10-18,690.00,You saved $10.00"));
 
                 //testInfo = 'Export Modal for Received - History - MYOB CSV'
                 Recpg.SelectExportFormat().Click();
