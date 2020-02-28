@@ -30,13 +30,13 @@ namespace BillzyAutomationTestSuite.Scripts
 
             try
             {
-                string awsid = "564633686392";
-                string awsuname = "nelda.raju";
-                string bamboouname = "nraju@billzy.com";
-                string ilinkuname = "nraju";
-                string awspassword = "nonprod2019!";
-                string bamboopassword = "bamboo2019!";
-                string ilinkpassword = "ilinkfeb2020!";
+                string awsid = "";
+                string awsuname = "";
+                string bamboouname = "";
+                string ilinkuname = "";
+                string awspassword = "";
+                string bamboopassword = "";
+                string ilinkpassword = "";
 
 
                 string connstring10 = "SERVER=ua1499yt8dheg18.coyhkhf2vwwc.ap-southeast-2.rds.amazonaws.com;DATABASE=billzy;USERNAME=AutoTest;PASSWORD=MEtZA9e1SJvMm0d4ukLk;";
