@@ -424,6 +424,25 @@ namespace BillzyAutomationTestSuite.PageObjects
         {
             return webDriver.FindElement(By.XPath("//*[@id=\"cannot-delete-cash-history\"]/div/button"));
         }
+        //Payway Tab
 
+        public IWebElement PaywayTabSelection()
+        {
+            return webDriver.FindElement(By.XPath("//*[@id=\"payway\"]"));
+        }
+
+        public IWebElement MatchButton1()
+        {
+            return webDriver.FindElement(By.XPath("(//*[@type=\"button\"])[2]"));
+        }
+
+        public IWebElement MatchButtonCancel()
+        {
+            return webDriver.FindElement(By.XPath("/html/body/div[6]/div/div[3]/div/button"));
+        }
+        public IWebElement MatchButtonOk()
+        {
+            return webDriver.FindElement(By.XPath("/html/body/div[6]/div/div[3]/div/button"));
+        }
     }
 }
