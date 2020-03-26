@@ -1,9 +1,4 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿
 using System.Threading.Tasks;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
@@ -15,21 +10,23 @@ using System.Net;
 using OpenQA.Selenium.Remote;
 using System.Net.Sockets;
 using OpenQA.Selenium.Interactions;
+using NUnit.Framework;
+using System;
+using OpenQA.Selenium;
 
 namespace BillzyAutomationTestSuite.Scripts
 {
-    [TestFixture]
-    [Parallelizable]
-    class RegSuite_CardManagement : Tests
+    class CardManagement : Tests
     {
+
         [Test]
-        public void AddDeleteCards01 ()
+        public void AddDeleteCards01()
         {
             HomePage HomePg = new HomePage(WebDriver);
             try
             {
 
-                
+
                 Console.WriteLine(WebDriver.Manage().Window.Size);
                 /*
 
@@ -38,11 +35,13 @@ namespace BillzyAutomationTestSuite.Scripts
                 Console.WriteLine(WebDriver.Manage().Window.Size);
                 Console.WriteLine("Test");
                 */
-                                
-                WebDriver.Manage().Window.Maximize();
                 
+
+                WebDriver.Manage().Window.Maximize();
+
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/home");
-   
+                
+                
                 LoginPage loginPage = new LoginPage(WebDriver);
                 loginPage.UserNameTextBox().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
@@ -99,7 +98,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 CardPg.AddCard2().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay7);
-                //CardPg.DeleteCard().Click();
+                CardPg.DeleteCard().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 //Visa Card
                 CardPg.AddCard().Click();
@@ -117,7 +116,6 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 CardPg.AddCard2().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay4);
-                //CardPg.DeleteCard().Click();
                 CardPg.DeleteCard().Click();
                 //Add  invalid Card number " Credit Card Number Field Error message
                 SeleniumSetMethods.WaitOnPage(secdelay2);
@@ -218,54 +216,6 @@ namespace BillzyAutomationTestSuite.Scripts
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 HomePg.SignOutBTN().Click();
-                
-            }
-            finally
-            {
-                
-            }
-
-        }
-
-        [Test]
-        public void AddDeleteCards02()
-        {
-            HomePage HomePg = new HomePage(WebDriver);
-            try
-            {
-
-
-
-                WebDriver.Manage().Window.Maximize();
-
-                WebDriver.Navigate().GoToUrl("https://demo.billzy.com/home");
-
-                LoginPage loginPage = new LoginPage(WebDriver);
-                loginPage.UserNameTextBox().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                loginPage.UserNameTextBox().Clear();
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                loginPage.UserNameTextBox().SendKeys("madcowtesting10+cardmanagmnt01@gmail.com");
-                loginPage.PasswordTextBox().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                loginPage.PasswordTextBox().SendKeys("Cognito1");
-                loginPage.LoginButton().Click();
-                SeleniumSetMethods SetMethods = new SeleniumSetMethods(WebDriver);
-                SeleniumSetMethods.WaitOnPage(secdelay7);
-                CardPage CardPg = new CardPage(WebDriver);
-
-                SendPage SendPg = new SendPage(WebDriver);
-                ReceivedPage Recpg = new ReceivedPage(WebDriver);
-                BillzyCashModal BillzyCashMlPg = new BillzyCashModal(WebDriver);
-                SIVPage SIVPG1 = new SIVPage(WebDriver);
-                HomePg.Profile().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                HomePg.CardMgmnt().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay7);
-                
-                CardPg.DeleteCardbutton().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                
 
             }
             finally
@@ -274,6 +224,5 @@ namespace BillzyAutomationTestSuite.Scripts
             }
 
         }
-
     }
 }

@@ -80,7 +80,14 @@ namespace BillzyAutomationTestSuite.PageObjects
 
         public IWebElement DeleteCard()
         {
-            return webDriver.FindElement(By.XPath("(//button[contains(@class, 'delete-card')])[1]"));
+            return webDriver.FindElement(By.XPath("(//button[@class='delete-card btn  ladda-button '])[2]"));
+        }
+
+        public IWebElement DeleteCardbutton()
+        {
+            //return webDriver.FindElement(By.XPath("(//span[@class='glyphicon glyphicon-trash'])[2]"));
+            return webDriver.FindElement(By.XPath("//*[@id=\"card-mgmt-credit-tab\"]/div/div[1]/div[4]/div[1]/div[3]/div[1]/div[4]/button/span[1]"));
+            //(//div[@class='col-sm-1 hidden-xs'])[1]
         }
 
         public IWebElement UserProfile()

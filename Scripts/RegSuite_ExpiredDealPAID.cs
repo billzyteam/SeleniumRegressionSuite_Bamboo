@@ -534,7 +534,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 //issueInvoice_issueInvoicePage_totalValue.checkValueContains = @amountGst
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 Console.WriteLine("InvoiceCreated");
-                SeleniumSetMethods.WaitOnPage(secdelay4);
+                SeleniumSetMethods.WaitOnPage(secdelay7);
                 HomePg.SignOutBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay4);
 

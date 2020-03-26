@@ -798,7 +798,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay3);
                 String PaymentTerms = "By Due Date";
 
-                DateTime duedate1 = DateTime.Today;
+                DateTime duedate1 = DateTime.Today.AddDays(5);
                 string SentPgDueDate = duedate1.ToString("dd/MM/yy");
                 IssueInvoicePg.PaymentTerms().SendKeys(PaymentTerms);
                 SeleniumSetMethods.WaitOnPage(secdelay1);
@@ -827,11 +827,11 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay1);
                 IssueInvoicePg.SendInvoiceBTN().Click();
                 Console.WriteLine("InvoiceCreated");
-                SeleniumSetMethods.WaitOnPage(secdelay3);
+                SeleniumSetMethods.WaitOnPage(secdelay5);
                 HomePg.SentBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay5);
                 SendPg.SearchInvoiceSent().SendKeys("OverDue@" + randnumber2);
-                SeleniumSetMethods.WaitOnPage(secdelay5);
+                SeleniumSetMethods.WaitOnPage(secdelay7);
                 SendPg.BillzyRefResult().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay4);
 

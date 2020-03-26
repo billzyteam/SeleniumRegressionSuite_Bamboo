@@ -182,5 +182,10 @@ namespace BillzyAutomationTestSuite.PageObjects
         {
             return webDriver.FindElement(By.XPath("//*[@id=\"external-payment-success\"]/div[2]/h2"));
         }
+
+        public IWebElement ManualDDApprove()
+        {
+            return webDriver.FindElement(By.XPath("/html/body"));
+        }
     }
 }

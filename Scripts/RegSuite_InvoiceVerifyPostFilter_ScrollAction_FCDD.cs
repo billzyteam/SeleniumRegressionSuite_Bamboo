@@ -1858,7 +1858,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IssueInvoicePg.Message().SendKeys("Test invoice has been sent");
                 SeleniumSetMethods.WaitOnPage(secdelay1);
                 IssueInvoicePg.SendInvoiceBTN().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay5);
+                SeleniumSetMethods.WaitOnPage(secdelay7);
                 sendpg.SearchInvoiceSent().Click();
                 HomePg.SignOutBTN().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay4);

@@ -978,6 +978,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 WebDriver.Navigate().GoToUrl("https://demo.billzy.com/received");
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 HomePg.SignOutBTN().Click();
+               
             }
             finally
             {
