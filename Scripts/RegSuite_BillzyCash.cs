@@ -19,7 +19,11 @@ namespace BillzyAutomationTestSuite.Scripts
     class RegSuite_BillzyCash : Tests
 
     {
-       [Test]
+        /*
+        Script Description : WEbapp user validates the issue invoice page and verifies the requested status in the listview
+       */
+
+        [Test]
         public void BillzyCash01_IssueInvoice_ListViews_REQUESTED()
         {
             HomePage HomePg = new HomePage(WebDriver);
@@ -445,6 +449,10 @@ namespace BillzyAutomationTestSuite.Scripts
                 
             }
         }
+        /*
+        Script Description : WEbapp user issues a normal invoice and requested cash from the single invoice view page
+       */
+
         [Test]
         public void BillzyCash02_CreatedinSIV()
         {
@@ -712,6 +720,10 @@ namespace BillzyAutomationTestSuite.Scripts
             }
         }
 
+        /*
+       Script Description : WEbapp user verifies the approved status in the list view
+      */
+
         [Test]
         public void BillzyCash03_IssueInvoice_ListViews_APPROVED()
         {
@@ -856,6 +868,10 @@ namespace BillzyAutomationTestSuite.Scripts
             }
         }
 
+        /*
+       Script Description : WEbapp user verifies the declined status in the list view
+      */
+
         [Test]
         public void BillzyCash04_IssueInvoice_ListViews_DECLINED()
         {
@@ -986,6 +1002,11 @@ namespace BillzyAutomationTestSuite.Scripts
             }
         }
 
+
+        /*
+       Script Description : WEbapp user verifies the requested status in the list view for the invoice issued tot he external client
+      */
+
         [Test]
         public void BillzyCash05_IssueInvoice_ListViews_REQUESTED_ExternalClient()
         {
@@ -1083,6 +1104,11 @@ namespace BillzyAutomationTestSuite.Scripts
             }
         }
 
+
+        /*
+       Script Description : WEbapp user issues an invoice for an external payer and requested the cash request from the single invoice page
+      */
+
         [Test]
         public void BillzyCash06_createdInSIV_ExternalClient()
         {
@@ -1177,6 +1203,11 @@ namespace BillzyAutomationTestSuite.Scripts
             }
         }
 
+
+        /*
+       Script Description : WEbapp user verifies the approved status in the list view for an invoice issued to the external payer
+      */
+
         [Test]
         public void BillzyCash07_External_IssueInvoice_ListViews_APPROVED()
         {
@@ -1247,6 +1278,10 @@ namespace BillzyAutomationTestSuite.Scripts
             }
 
         }
+
+        /*
+       Script Description : WEbapp user verifies the declined status in the list view for an invoice issued to the external payer
+      */
 
         [Test]
         public void BillzyCash08_External_IssueInvoice_ListViews_DECLINED()
@@ -1320,6 +1355,9 @@ namespace BillzyAutomationTestSuite.Scripts
 
 
         }
+        /*
+       Script Description : WEbapp user verifies billzy column status and stauts text check in the list view
+      */
 
         [Test]
         public void BillzyCash09_BillzyCashFlow_APPROVED_IconLogic()
@@ -1584,6 +1622,10 @@ namespace BillzyAutomationTestSuite.Scripts
             }
 
         }
+        
+        /*
+       Script Description : BOBO user requested cash invoice and declined through the financial controller and verifies the delete option for the invoice in webapp
+      */
 
         [Test]
         public void BillzyCash10_BillzyCashFlow_BOBORequestedDeclined_Delete()
@@ -1808,6 +1850,9 @@ namespace BillzyAutomationTestSuite.Scripts
             }
 
         }
+        /*
+       Script Description : Verify the auto decline for the invoices in cash requested status while payment intiates
+      */
 
         [Test]
         public void BillzyCash11_DynamicCashStateChange_Scenario1_CashRequested()
@@ -2221,6 +2266,10 @@ namespace BillzyAutomationTestSuite.Scripts
             }
 
         }
+
+        /*
+    Script Description : Verify the auto decline for the invoices in cash preapproved status while payment intiates
+   */
 
         [Test]
         public void BillzyCash12_DynamicCashStateChange_Scenario2_CashPreApproved()
@@ -2664,6 +2713,9 @@ namespace BillzyAutomationTestSuite.Scripts
             }
 
         }
+        /*
+         Script Description : Verify the auto decline for the invoices in cash approved status while payment intiates
+        */
 
         [Test]
         public void BillzyCash13_DynamicCashStateChange_Scenario3_CashApproved()

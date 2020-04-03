@@ -20,6 +20,10 @@ namespace BillzyAutomationTestSuite.Scripts
     //Test validation to githu
     class RegSuite_Bank_Verification : Tests
     {
+        /*
+         Script Description : WEbapp user verifies the newly added bank account under account tab
+        */
+
         [Test]
         public void BankAccountVerification01_VerifyNewlyAddedBank()
         {
@@ -203,6 +207,10 @@ namespace BillzyAutomationTestSuite.Scripts
 
         }
 
+        /*
+        Script Description : WEbapp user pays the invoice that against the unverified merchant account
+       */
+
         [Test]
         public void BankAccountVerification02_UnverifiedAccountPAY()
         {
@@ -258,7 +266,11 @@ namespace BillzyAutomationTestSuite.Scripts
 
 
         }
-                
+
+        /*
+        Script Description : Create a new user and vreify the merchant accounts
+       */
+
         [Test]
         public void MerchantAccountVerification03_VerifyMerchantAccount()
         {

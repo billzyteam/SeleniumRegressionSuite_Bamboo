@@ -17,7 +17,9 @@ namespace BillzyAutomationTestSuite.Scripts
     [Parallelizable]
     class RegSuite_BillzyInbox : Tests
     {
-
+        /*
+ Script Description : Verify the auto decline for the invoices in cash approved status while payment intiates
+*/
         [Test]
         public void BillzyInbox01_ListView_and_SIV_validation_CSVExport()
         {

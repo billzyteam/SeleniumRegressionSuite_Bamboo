@@ -381,7 +381,7 @@ namespace BillzyAutomationTestSuite.Scripts
         }
 
         /*
-        Script Description : BOBO User adds internal users and issues an invoice
+        Script Description : BOBO User adds internal users and issue a cash invoice with surcharge
        */
 
         [Test]
@@ -564,6 +564,9 @@ namespace BillzyAutomationTestSuite.Scripts
 
             }
         }
+        /*
+        Script Description : BOBO User adds new external contacts, and issue a normal invoice without surcharge
+       */
 
         [Test]
         public void BOBO03_03_LoginPage_NewExternalContacts_IssueInvoice_NormalInvoice()
@@ -732,6 +735,10 @@ namespace BillzyAutomationTestSuite.Scripts
 
         }
 
+        /*
+        Script Description : BOBO User adds new internal contacts, and issue an invoice, Make the payment 
+       */
+
         [Test]
         public void BOBO04_InternalContacts_IssueInvoice_NormalInvoice()
         {
@@ -899,6 +906,11 @@ namespace BillzyAutomationTestSuite.Scripts
 
             }
         }
+
+        /*
+        Script Description : BOBO User adds new external contacts by providing ABN details only, and issue an invoice
+       */
+
         [Test]
         public void BOBO05_NewExternalContacts_ABNOnly_IssueInvoice()
         {
@@ -1065,6 +1077,10 @@ namespace BillzyAutomationTestSuite.Scripts
 
             }
         }
+
+        /*
+        Script Description : BOBO User adds new external contacts without address, and issue an invoice
+       */
 
         [Test]
         public void BOBO06_ExistingExternalContacts_NoAddressIssueInvoice()
@@ -1236,6 +1252,10 @@ namespace BillzyAutomationTestSuite.Scripts
             }
         }
 
+        /*
+        Script Description : BOBO User creates Third Party Biller and issue inbox invoices
+       */
+
         [Test]
         public void BOBO07_TPB_CreateNewBiller_IssueBillzyInbox()
         {
@@ -1366,6 +1386,11 @@ namespace BillzyAutomationTestSuite.Scripts
 
             }
         }
+
+        /*
+        Script Description : BOBO User updates an existing billzy invoice like invoice verification and marked as paid
+        */
+
         [Test]
         public void BOBO08_UpdateExistingBillzyInvoice()
         {
@@ -1684,7 +1709,7 @@ namespace BillzyAutomationTestSuite.Scripts
         }
 
         /*
-        Script Description : BOBO User checks whether Mark as Paid option is available for Normal Unpaid, Paid, Processing, Delete and biller Mark as Paid invoices
+        Script Description : BOBO User marking the noraml invoice as paid
        */
 
         [Test]
@@ -2029,8 +2054,8 @@ namespace BillzyAutomationTestSuite.Scripts
             }
         }
         /*
-         Script Description : BOBO User checks whether Mark as Paid option is available for Cash Requested, Approved, Declined, Paid and Processing invoices
-        */
+    Script Description : BOBO User marking the cash invoice as paid
+   */
 
         [Test]
         public void BOBO10_UpdateExistingBillzyInvoice_MarkAsPaid02_CashInvoice()
@@ -2373,10 +2398,9 @@ namespace BillzyAutomationTestSuite.Scripts
 
             }
         }
-
         /*
-         Script Description : BOBO User checks whether Mark as Paid option is available for Offer Sent, Recevied invoices
-        */
+            Script Description : BOBO User marking the deal invoice as paid
+           */
 
         [Test]
         public void BOBO11_UpdateExistingBillzyInvoice_MarkAsPaid03_DealInvoice()
@@ -3251,6 +3275,10 @@ namespace BillzyAutomationTestSuite.Scripts
             }
         }
 
+        /*
+         Script Description : BOBO User deletes the cash invoice
+        */
+
         [Test]
         public void BOBO13_UpdateExistingBillzyInvoice_Delete02_CashInvoice()
         {
@@ -3581,6 +3609,10 @@ namespace BillzyAutomationTestSuite.Scripts
 
             }
         }
+
+        /*
+         Script Description : BOBO User deletes the deal invoice
+        */
 
         [Test]
         public void BOBO14_UpdateExistingBillzyInvoice_Delete03_DealInvoice()
@@ -4112,6 +4144,10 @@ namespace BillzyAutomationTestSuite.Scripts
 
             }
         }
+
+        /*
+         Script Description : BOBO User creates an invoice with surcharge and validates the surcharge rates in the payment page
+        */
 
         [Test]
         public void BOBO15_BillzyBillerCCRateValidation_NormalInvoice()

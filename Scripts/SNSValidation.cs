@@ -18,6 +18,13 @@ namespace BillzyAutomationTestSuite.Scripts
     [Parallelizable]
     class SNSValidation : Tests
     {
+        /*******************************************************************************************
+            Scenario 1 : SNS verification while manual direct debit from Fincon
+            Scenario 2 : SNS verification while Deal Request, Deal Counter and Deal Approve
+            Scenario 3 : SNS verification while Cash Request and Cash Approve
+            Scenario 4 : SNS verification while payent made by Credit Card
+            Scenario 5 : SNS verification while payent made by Bank Transfer
+        *******************************************************************************************/
 
         [Test]
         public void SNS01_ManualDirectDebit_FinCon()
@@ -620,7 +627,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 IWebElement bodyTag1 = WebDriver.FindElement(By.TagName("body"));
                 bool Content1 = bodyTag1.Text.Contains("madcowtesting10+2123659734 requested billzyCash at");
                 bool Content2 = bodyTag1.Text.Contains("for invoice number "+invoicenumber+", with customer reference CashSNS"+randnumber2+".");
-                bool Content4 = bodyTag1.Text.Contains("This user has no cash enabled status");
+                bool Content4 = bodyTag1.Text.Contains("This user is enabled for cash");
                 bool Content5 = bodyTag1.Text.Contains("Invoice Recipient: madcowtesting10+1120168103");
                 bool Content6 = bodyTag1.Text.Contains("Total Invoice Amount: $100.00");
                 bool Content7 = bodyTag1.Text.Contains("Get Paid Now: $80.00");
@@ -645,7 +652,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 bool Content25 = bodyTag2.Text.Contains("Invoice recipient: madcowtesting10+1120168103 (INTERNAL)");
                 bool Content26 = bodyTag2.Text.Contains("Total Invoice Amount: $100.00");
                 bool Content27 = bodyTag2.Text.Contains("Get Paid Now: $80.00");
-                bool Content28 = bodyTag2.Text.Contains("Get Paid Later Up To: $15.00. Minus Late Fees.");
+                bool Content28 = bodyTag2.Text.Contains("Get Paid Later Up To: $15.00. Minus late fees");
                 bool Content29 = bodyTag2.Text.Contains("madcowtesting10+2123659734 has been approved for 80.00");
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Assert.IsTrue(Content21 == true && Content22 == true && Content24 == true && Content25 == true && Content26 == true && Content27 == true && Content28 == true && Content29 == true );
@@ -763,8 +770,7 @@ namespace BillzyAutomationTestSuite.Scripts
 
                 Recpg.SearchInvoiceReceived().SendKeys(invoicenumber);
                 SeleniumSetMethods.WaitOnPage(secdelay5);
-                Recpg.BillzyRefResult().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay5);
+               
                 Recpg.ActionsMenu().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 Recpg.PAY().Click();
@@ -814,7 +820,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay5);
                 gmailpg.Search().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
-                gmailpg.Search().SendKeys(invoicenumber);
+                gmailpg.Search().SendKeys("CardpaySNS"+randnumber2);
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 gmailpg.SearchOption().Click();
@@ -823,44 +829,16 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay5);
                 new Actions(WebDriver).SendKeys(OpenQA.Selenium.Keys.ArrowDown).Perform();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
-                new Actions(WebDriver).SendKeys(OpenQA.Selenium.Keys.ArrowDown).Perform();
-                SeleniumSetMethods.WaitOnPage(secdelay2);
                 new Actions(WebDriver).SendKeys(OpenQA.Selenium.Keys.Enter).Perform();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 IWebElement bodyTag1 = WebDriver.FindElement(By.TagName("body"));
-                bool Content1 = bodyTag1.Text.Contains("madcowtesting10+2123659734 requested billzyCash at");
-                bool Content2 = bodyTag1.Text.Contains("for invoice number " + invoicenumber + ", with customer reference CashSNS" + randnumber2 + ".");
-                bool Content4 = bodyTag1.Text.Contains("This user has no cash enabled status");
-                bool Content5 = bodyTag1.Text.Contains("Invoice Recipient: madcowtesting10+1120168103");
-                bool Content6 = bodyTag1.Text.Contains("Total Invoice Amount: $100.00");
-                bool Content7 = bodyTag1.Text.Contains("Get Paid Now: $80.00");
-                bool Content8 = bodyTag1.Text.Contains("Get Paid Later Up To: $15.00. Minus Late Fees.");
-                bool Content9 = bodyTag1.Text.Contains("Biller Merchant Account BSB: 484799");
-                bool Content10 = bodyTag1.Text.Contains("Biller Merchant Account Number: 65432111");
-                bool Content3 = bodyTag1.Text.Contains("Biller Merchant Account Name: receiveAccount");
+                bool Content1 = bodyTag1.Text.Contains("madcowtesting10+1120168103 has completed a payment of $100.00 for your invoice, CardpaySNS"+randnumber2);
+                
                 SeleniumSetMethods.WaitOnPage(secdelay2);
-                Assert.IsTrue(Content1 == true && Content2 == true && Content3 == true && Content4 == true && Content5 == true && Content6 == true && Content7 == true && Content8 == true && Content9 == true && Content10 == true);
+                Assert.IsTrue(Content1 == true);
                 SeleniumSetMethods.WaitOnPage(secdelay2);
-                gmailpg.BacktoSearchresult().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                new Actions(WebDriver).SendKeys(OpenQA.Selenium.Keys.ArrowUp).Perform();
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                new Actions(WebDriver).SendKeys(OpenQA.Selenium.Keys.Enter).Perform();
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                IWebElement bodyTag2 = WebDriver.FindElement(By.TagName("body"));
-                bool Content21 = bodyTag2.Text.Contains("The following details relate to the member who has been approved for billzy cash");
-                bool Content22 = bodyTag2.Text.Contains("Billzy member: madcowtesting10+2123659734");
-                bool Content24 = bodyTag2.Text.Contains("Billzy member ID: 48614");
-                bool Content25 = bodyTag2.Text.Contains("Invoice recipient: madcowtesting10+1120168103 (INTERNAL)");
-                bool Content26 = bodyTag2.Text.Contains("Total Invoice Amount: $100.00");
-                bool Content27 = bodyTag2.Text.Contains("Get Paid Now: $80.00");
-                bool Content28 = bodyTag2.Text.Contains("Get Paid Later Up To: $15.00. Minus Late Fees.");
-                bool Content29 = bodyTag2.Text.Contains("madcowtesting10+2123659734 has been approved for 80.00");
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                Assert.IsTrue(Content21 == true && Content22 == true && Content24 == true && Content25 == true && Content26 == true && Content27 == true && Content28 == true && Content29 == true);
-                SeleniumSetMethods.WaitOnPage(secdelay2);
+                
                 gmailpg.BacktoSearchresult().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay4);
                 gmailpg.profile().Click();
@@ -1010,7 +988,7 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay5);
                 gmailpg.Search().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
-                gmailpg.Search().SendKeys(invoicenumber);
+                gmailpg.Search().SendKeys("BankpaySNS"+randnumber2);
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 gmailpg.SearchOption().Click();
@@ -1019,46 +997,19 @@ namespace BillzyAutomationTestSuite.Scripts
                 SeleniumSetMethods.WaitOnPage(secdelay5);
                 new Actions(WebDriver).SendKeys(OpenQA.Selenium.Keys.ArrowDown).Perform();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
-                new Actions(WebDriver).SendKeys(OpenQA.Selenium.Keys.ArrowDown).Perform();
-                SeleniumSetMethods.WaitOnPage(secdelay2);
+               
                 new Actions(WebDriver).SendKeys(OpenQA.Selenium.Keys.Enter).Perform();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 IWebElement bodyTag1 = WebDriver.FindElement(By.TagName("body"));
-                bool Content1 = bodyTag1.Text.Contains("madcowtesting10+2123659734 requested billzyCash at");
-                bool Content2 = bodyTag1.Text.Contains("for invoice number " + invoicenumber + ", with customer reference CashSNS" + randnumber2 + ".");
-                bool Content4 = bodyTag1.Text.Contains("This user has no cash enabled status");
-                bool Content5 = bodyTag1.Text.Contains("Invoice Recipient: madcowtesting10+1120168103");
-                bool Content6 = bodyTag1.Text.Contains("Total Invoice Amount: $100.00");
-                bool Content7 = bodyTag1.Text.Contains("Get Paid Now: $80.00");
-                bool Content8 = bodyTag1.Text.Contains("Get Paid Later Up To: $15.00. Minus Late Fees.");
-                bool Content9 = bodyTag1.Text.Contains("Biller Merchant Account BSB: 484799");
-                bool Content10 = bodyTag1.Text.Contains("Biller Merchant Account Number: 65432111");
-                bool Content3 = bodyTag1.Text.Contains("Biller Merchant Account Name: receiveAccount");
+                bool Content1 = bodyTag1.Text.Contains("madcowtesting10+1120168103 has initiated a bank transfer payment of $100.00 for your invoice, BankpaySNS"+randnumber2+". This payment is currently being processed by their financial institution");
+               
                 SeleniumSetMethods.WaitOnPage(secdelay2);
-                Assert.IsTrue(Content1 == true && Content2 == true && Content3 == true && Content4 == true && Content5 == true && Content6 == true && Content7 == true && Content8 == true && Content9 == true && Content10 == true);
+                Assert.IsTrue(Content1 == true );
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 gmailpg.BacktoSearchresult().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
-                new Actions(WebDriver).SendKeys(OpenQA.Selenium.Keys.ArrowUp).Perform();
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                new Actions(WebDriver).SendKeys(OpenQA.Selenium.Keys.Enter).Perform();
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                IWebElement bodyTag2 = WebDriver.FindElement(By.TagName("body"));
-                bool Content21 = bodyTag2.Text.Contains("The following details relate to the member who has been approved for billzy cash");
-                bool Content22 = bodyTag2.Text.Contains("Billzy member: madcowtesting10+2123659734");
-                bool Content24 = bodyTag2.Text.Contains("Billzy member ID: 48614");
-                bool Content25 = bodyTag2.Text.Contains("Invoice recipient: madcowtesting10+1120168103 (INTERNAL)");
-                bool Content26 = bodyTag2.Text.Contains("Total Invoice Amount: $100.00");
-                bool Content27 = bodyTag2.Text.Contains("Get Paid Now: $80.00");
-                bool Content28 = bodyTag2.Text.Contains("Get Paid Later Up To: $15.00. Minus Late Fees.");
-                bool Content29 = bodyTag2.Text.Contains("madcowtesting10+2123659734 has been approved for 80.00");
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                Assert.IsTrue(Content21 == true && Content22 == true && Content24 == true && Content25 == true && Content26 == true && Content27 == true && Content28 == true && Content29 == true);
-                SeleniumSetMethods.WaitOnPage(secdelay2);
-                gmailpg.BacktoSearchresult().Click();
-                SeleniumSetMethods.WaitOnPage(secdelay4);
+                
                 gmailpg.profile().Click();
                 SeleniumSetMethods.WaitOnPage(secdelay2);
                 gmailpg.signout().Click();

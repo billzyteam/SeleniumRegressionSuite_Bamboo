@@ -18,6 +18,13 @@ namespace BillzyAutomationTestSuite.Scripts
     [Parallelizable]
     class RegSuite_SplitPayments : Tests
     {
+        /*******************************************************************************************
+           Scenario 1 : Split payment verfication by both valid Credit Cards
+           Scenario 2 : Split payment verfication by both invalid Credit Cards
+           Scenario 3 : Split payment verfication by one valid and one invalid Credit Card
+           Scenario 4 : Split payment verfication by both valid Credit Card
+           Scenario 5 : Split payment verfication by both valid Credit Card
+       *******************************************************************************************/
 
         [Test]
         public void SplitPayment01__Deal_GST_Surcharge_Valid_CC()

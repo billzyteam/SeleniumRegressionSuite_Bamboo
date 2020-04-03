@@ -30,7 +30,14 @@ namespace BillzyAutomationTestSuite.Scripts
 
             try
             {
-               
+
+                string awsid = "";
+                string awsuname = "";
+                string bamboouname = "";
+                string ilinkuname = "";
+                string awspassword = "";
+                string bamboopassword = "";
+                string ilinkpassword = "";
 
 
 
